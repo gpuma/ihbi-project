@@ -1,0 +1,438 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6206.8" systemVersion="13A461" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="10">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7026.1"/>
+        <deployment version="2048" identifier="iOS"/>
+    </dependencies>
+    <scenes>
+        <!--class Prefix:identifier View Controller-->
+        <scene sceneID="9">
+            <objects>
+                <viewController id="10" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="7"/>
+                        <viewControllerLayoutGuide type="bottom" id="8"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="11">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="940" translatesAutoresizingMaskIntoConstraints="NO" image="login.png">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <constraints>
+                                    <constraint id="962" firstAttribute="width" constant="375"/>
+                                    <constraint id="963" firstAttribute="height" constant="667"/>
+                                </constraints>
+                            </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="15" translatesAutoresizingMaskIntoConstraints="NO" misplaced="YES">
+                                <rect key="frame" x="140" y="347" width="180" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <constraints>
+                                    <constraint id="71" firstAttribute="width" constant="165"/>
+                                </constraints>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="17" translatesAutoresizingMaskIntoConstraints="NO" misplaced="YES">
+                                <rect key="frame" x="140" y="382" width="180" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <constraints>
+                                    <constraint id="74" firstAttribute="width" constant="165"/>
+                                </constraints>
+                            </textField>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" lineBreakMode="tailTruncation" minimumFontSize="10" id="21" translatesAutoresizingMaskIntoConstraints="NO" text="Email" textAlignment="right" preferredMaxLayoutWidth="87">
+                                <rect key="frame" x="27" y="350" width="87" height="21"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
+                                <color key="textColor" colorSpace="calibratedRGB" red="0" green="0.13333333333333333" blue="0.36078431372549019" alpha="1"/>
+                                <nil key="highlightedColor"/>
+                                <constraints>
+                                    <constraint id="57" firstAttribute="width" constant="87"/>
+                                    <constraint id="58" firstAttribute="height" constant="21"/>
+                                </constraints>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" lineBreakMode="tailTruncation" minimumFontSize="10" id="22" translatesAutoresizingMaskIntoConstraints="NO" text="Password" textAlignment="right">
+                                <rect key="frame" x="30" y="385" width="87" height="21"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" colorSpace="calibratedRGB" red="0" green="0.13333333333333333" blue="0.36078431372549019" alpha="1"/>
+                                <nil key="highlightedColor"/>
+                                <constraints>
+                                    <constraint id="61" firstAttribute="width" constant="87"/>
+                                    <constraint id="62" firstAttribute="height" constant="21"/>
+                                </constraints>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="28" translatesAutoresizingMaskIntoConstraints="NO" showsTouchWhenHighlighted="YES">
+                                <rect key="frame" x="53" y="430" width="100" height="30"/>
+                                <size key="titleShadowOffset" width="0" height="0"/>
+                                <state key="normal" title="Sign Up">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleColor" colorSpace="calibratedRGB" red="0" green="0.13333333333333333" blue="0.36078431372549019" alpha="1"/>
+                                </state>
+                                <state key="highlighted"/>
+                                <state key="selected"/>
+                                <state key="disabled"/>
+                                <constraints>
+                                    <constraint id="65" firstAttribute="width" constant="100"/>
+                                </constraints>
+                                <connections>
+                                    <segue id="1675" destination="428" kind="presentation"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="29" translatesAutoresizingMaskIntoConstraints="NO" showsTouchWhenHighlighted="YES">
+                                <rect key="frame" x="200" y="430" width="100" height="30"/>
+                                <size key="titleShadowOffset" width="0" height="0"/>
+                                <state key="normal" title="Log In">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleColor" colorSpace="calibratedRGB" red="0" green="0.13333333333333333" blue="0.36078431372549019" alpha="1"/>
+                                </state>
+                                <constraints>
+                                    <constraint id="68" firstAttribute="width" constant="100"/>
+                                </constraints>
+                                <connections>
+                                    <segue id="1804" destination="1765" kind="presentation"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint id="18" firstItem="17" firstAttribute="width" secondItem="15" secondAttribute="width" constant="0.0"/>
+                            <constraint id="19" firstItem="17" firstAttribute="height" secondItem="15" secondAttribute="height" constant="0.0"/>
+                            <constraint id="25" firstItem="22" firstAttribute="width" secondItem="21" secondAttribute="width" constant="0.0"/>
+                            <constraint id="26" firstItem="21" firstAttribute="width" secondItem="22" secondAttribute="width" constant="0.0"/>
+                            <constraint id="27" firstItem="21" firstAttribute="width" secondItem="22" secondAttribute="width" constant="0.0"/>
+                            <constraint id="31" firstItem="28" firstAttribute="width" secondItem="29" secondAttribute="width" constant="0.0"/>
+                            <constraint id="39" firstItem="28" firstAttribute="width" secondItem="29" secondAttribute="width" constant="0.0"/>
+                            <constraint id="918" firstItem="21" firstAttribute="leading" secondItem="11" secondAttribute="leading" constant="27"/>
+                            <constraint id="919" firstItem="11" firstAttribute="bottom" secondItem="21" secondAttribute="bottom" constant="296"/>
+                            <constraint id="926" firstItem="22" firstAttribute="leading" secondItem="11" secondAttribute="leading" constant="30"/>
+                            <constraint id="927" firstItem="11" firstAttribute="bottom" secondItem="22" secondAttribute="bottom" constant="261"/>
+                            <constraint id="930" firstItem="28" firstAttribute="leading" secondItem="11" secondAttribute="leading" constant="53"/>
+                            <constraint id="931" firstItem="11" firstAttribute="bottom" secondItem="28" secondAttribute="bottom" constant="207"/>
+                            <constraint id="932" firstItem="11" firstAttribute="bottom" secondItem="29" secondAttribute="bottom" constant="207"/>
+                            <constraint id="933" constant="75" firstItem="11" firstAttribute="trailing" secondItem="29" secondAttribute="trailing"/>
+                            <constraint id="960" constant="0.0" firstItem="11" firstAttribute="trailing" secondItem="940" secondAttribute="trailing"/>
+                            <constraint id="961" constant="0.0" firstItem="11" firstAttribute="bottom" secondItem="940" secondAttribute="bottom"/>
+                            <constraint id="966" firstItem="11" firstAttribute="trailing" secondItem="15" secondAttribute="trailing" constant="55"/>
+                            <constraint id="967" constant="290" firstItem="11" firstAttribute="bottom" secondItem="15" secondAttribute="bottom"/>
+                            <constraint id="968" constant="55" firstItem="11" firstAttribute="trailing" secondItem="17" secondAttribute="trailing"/>
+                            <constraint id="969" constant="255" firstItem="11" firstAttribute="bottom" secondItem="17" secondAttribute="bottom"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="12" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="412" y="1"/>
+        </scene>
+        <scene sceneID="427">
+            <objects>
+                <viewController id="428" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="425"/>
+                        <viewControllerLayoutGuide type="bottom" id="426"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="429">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="432" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" image="login.png">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="670"/>
+                            </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" lineBreakMode="tailTruncation" minimumFontSize="10" id="799" translatesAutoresizingMaskIntoConstraints="NO" textAlignment="right" text="Name">
+                                <rect key="frame" x="30" y="335" width="87" height="21"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
+                                <color key="textColor" colorSpace="calibratedRGB" red="0" green="0.13333333333333333" blue="0.36078431372549019" alpha="1"/>
+                                <nil key="highlightedColor"/>
+                                <constraints>
+                                    <constraint id="800" firstAttribute="width" constant="87"/>
+                                    <constraint id="801" firstAttribute="height" constant="21"/>
+                                </constraints>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="805" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="140" y="333" width="165" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <constraints>
+                                    <constraint id="806" firstAttribute="width" constant="165"/>
+                                </constraints>
+                            </textField>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" lineBreakMode="tailTruncation" minimumFontSize="10" id="802" translatesAutoresizingMaskIntoConstraints="NO" text="Email" textAlignment="right">
+                                <rect key="frame" x="30" y="371" width="87" height="21"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" colorSpace="calibratedRGB" red="0" green="0.13333333333333333" blue="0.36078431372549019" alpha="1"/>
+                                <nil key="highlightedColor"/>
+                                <constraints>
+                                    <constraint id="803" firstAttribute="width" constant="87"/>
+                                    <constraint id="804" firstAttribute="height" constant="21"/>
+                                </constraints>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="807" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="140" y="368" width="165" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <constraints>
+                                    <constraint id="808" firstAttribute="width" constant="165"/>
+                                </constraints>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="809" translatesAutoresizingMaskIntoConstraints="NO" showsTouchWhenHighlighted="YES">
+                                <rect key="frame" x="53" y="450" width="100" height="30"/>
+                                <size key="titleShadowOffset" width="0" height="0"/>
+                                <state key="normal" title="Cancel">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleColor" colorSpace="calibratedRGB" red="0" green="0.13333333333333333" blue="0.36078431372549019" alpha="1"/>
+                                </state>
+                                <state key="highlighted"/>
+                                <state key="selected"/>
+                                <state key="disabled"/>
+                                <constraints>
+                                    <constraint id="812" firstAttribute="width" constant="100"/>
+                                </constraints>
+                                <connections>
+                                    <segue id="1754" destination="10" kind="presentation"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="813" translatesAutoresizingMaskIntoConstraints="NO" showsTouchWhenHighlighted="YES">
+                                <rect key="frame" x="200" y="450" width="100" height="30"/>
+                                <size key="titleShadowOffset" width="0" height="0"/>
+                                <state key="normal" title="Sign Up">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleColor" colorSpace="calibratedRGB" red="0" green="0.13333333333333333" blue="0.36078431372549019" alpha="1"/>
+                                </state>
+                                <constraints>
+                                    <constraint id="816" firstAttribute="width" constant="100"/>
+                                </constraints>
+                                <connections>
+                                    <segue id="1501" destination="10" kind="presentation"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" lineBreakMode="tailTruncation" minimumFontSize="10" id="820" translatesAutoresizingMaskIntoConstraints="NO" text="Password" textAlignment="right">
+                                <rect key="frame" x="30" y="406" width="87" height="21"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" colorSpace="calibratedRGB" red="0" green="0.13333333333333333" blue="0.36078431372549019" alpha="1"/>
+                                <nil key="highlightedColor"/>
+                                <constraints>
+                                    <constraint id="821" firstAttribute="width" constant="87"/>
+                                    <constraint id="822" firstAttribute="height" constant="21"/>
+                                </constraints>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="823" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="140" y="403" width="165" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <constraints>
+                                    <constraint id="824" firstAttribute="width" constant="165"/>
+                                </constraints>
+                            </textField>
+                        </subviews>
+                        <constraints>
+                            <constraint id="902" constant="30" firstItem="799" firstAttribute="leading" secondItem="429" secondAttribute="leading"/>
+                            <constraint id="903" constant="311" firstItem="429" firstAttribute="bottom" secondItem="799" secondAttribute="bottom"/>
+                            <constraint id="904" constant="70" firstItem="429" firstAttribute="trailing" secondItem="805" secondAttribute="trailing"/>
+                            <constraint id="905" constant="304" firstItem="429" firstAttribute="bottom" secondItem="805" secondAttribute="bottom"/>
+                            <constraint id="906" constant="30" firstItem="802" firstAttribute="leading" secondItem="429" secondAttribute="leading"/>
+                            <constraint id="907" constant="275" firstItem="429" firstAttribute="bottom" secondItem="802" secondAttribute="bottom"/>
+                            <constraint id="908" constant="70" firstItem="429" firstAttribute="trailing" secondItem="807" secondAttribute="trailing"/>
+                            <constraint id="909" constant="269" firstItem="429" firstAttribute="bottom" secondItem="807" secondAttribute="bottom"/>
+                            <constraint id="910" constant="53" firstItem="809" firstAttribute="leading" secondItem="429" secondAttribute="leading"/>
+                            <constraint id="911" constant="187" firstItem="429" firstAttribute="bottom" secondItem="809" secondAttribute="bottom"/>
+                            <constraint id="912" constant="75" firstItem="429" firstAttribute="trailing" secondItem="813" secondAttribute="trailing"/>
+                            <constraint id="913" constant="187" firstItem="429" firstAttribute="bottom" secondItem="813" secondAttribute="bottom"/>
+                            <constraint id="914" constant="30" firstItem="820" firstAttribute="leading" secondItem="429" secondAttribute="leading"/>
+                            <constraint id="915" constant="240" firstItem="429" firstAttribute="bottom" secondItem="820" secondAttribute="bottom"/>
+                            <constraint id="916" constant="70" firstItem="429" firstAttribute="trailing" secondItem="823" secondAttribute="trailing"/>
+                            <constraint id="917" constant="234" firstItem="429" firstAttribute="bottom" secondItem="823" secondAttribute="bottom"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="430" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="445" y="847"/>
+        </scene>
+        <scene sceneID="624">
+            <objects>
+                <navigationController definesPresentationContext="YES" id="625" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="628">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                    </navigationBar>
+                    <connections>
+                    </connections>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="375" height="667"/>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="629" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2157" y="-823"/>
+        </scene>
+        <scene sceneID="1764">
+            <objects>
+                <tabBarController definesPresentationContext="YES" id="1765" sceneMemberID="viewController">
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="1770" clipsSubviews="YES" backgroundImage="bottom.png">
+                        <rect key="frame" x="0.0" y="618" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="1767" kind="relationship" relationship="viewControllers" id="1766"/>
+                        <segue destination="1769" kind="relationship" relationship="viewControllers" id="1768"/>
+                        <segue id="1843" destination="1813" kind="relationship" relationship="viewControllers"/>
+                        <segue id="1872" destination="1848" kind="relationship" relationship="viewControllers"/>
+                        <segue id="1909" destination="1877" kind="relationship" relationship="viewControllers"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1771" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1015" y="0.0"/>
+        </scene>
+        <scene sceneID="1772">
+            <objects>
+                <viewController id="1767" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="1760"/>
+                        <viewControllerLayoutGuide type="bottom" id="1761"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="1773">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" id="1926" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" backIndicatorImage="top.png" shadowImage="top.png">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <items>
+                                    <navigationItem title="Younger Women Wellness" id="1927"/>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="News Feed" id="1774"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1775" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1666" y="-1561"/>
+        </scene>
+        <scene sceneID="1776">
+            <objects>
+                <viewController id="1769" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="1762"/>
+                        <viewControllerLayoutGuide type="bottom" id="1763"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="1777">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" id="1928" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <items>
+                                    <navigationItem title="Daily Checkin" id="1929"/>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Daily Checkin" id="1778"/>
+                    <toolbarItems/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1779" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1673" y="-814"/>
+        </scene>
+        <scene sceneID="1812">
+            <objects>
+                <viewController id="1813" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="1810"/>
+                        <viewControllerLayoutGuide type="bottom" id="1811"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="1814">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" id="1924" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <items>
+                                    <navigationItem title="Schedule" id="1925"/>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Schedule" id="1842"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1815" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1692" y="-1"/>
+        </scene>
+        <scene sceneID="1847">
+            <objects>
+                <viewController id="1848" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="1845"/>
+                        <viewControllerLayoutGuide type="bottom" id="1846"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="1849">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" id="1930" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <items>
+                                    <navigationItem title="Events" id="1931"/>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Events" id="1871"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1850" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1698" y="756"/>
+        </scene>
+        <scene sceneID="1876">
+            <objects>
+                <viewController id="1877" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="1874"/>
+                        <viewControllerLayoutGuide type="bottom" id="1875"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="1878">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" id="1932" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <items>
+                                    <navigationItem title="Notification" id="1933"/>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Notification" id="1908"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1879" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1707" y="1500"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="bottom.png" width="375" height="49"/>
+        <image name="initial.png" width="750" height="1334"/>
+        <image name="login.png" width="750" height="1334"/>
+        <image name="Default-568h.png" width="640" height="1136"/>
+        <image name="top.png" width="375" height="49"/>
+        <image name="Default.png" width="320" height="480"/>
+    </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedScreenMetrics key="destination" type="retina47"/>
+    </simulatedMetricsContainer>
+</document>
