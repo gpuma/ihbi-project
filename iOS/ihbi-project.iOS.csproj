@@ -160,10 +160,18 @@
     <ImageAsset Include="Resources\Images.xcassets\LaunchImage.launchimage\1242x2208.png">
       <InProject>false</InProject>
     </ImageAsset>
-    <ImageAsset Include="Resources\Images.xcassets\LaunchImage-1.launchimage\Contents.json" />
-    <ImageAsset Include="Resources\Images.xcassets\LaunchImage-1.launchimage\Default.png" />
-    <ImageAsset Include="Resources\Images.xcassets\LaunchImage-1.launchimage\Default%402x.png" />
-    <ImageAsset Include="Resources\Images.xcassets\LaunchImage-1.launchimage\Default-568h%402x.png" />
+    <ImageAsset Include="Resources\Images.xcassets\LaunchImage-1.launchimage\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\LaunchImage-1.launchimage\Default.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\LaunchImage-1.launchimage\Default%402x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\LaunchImage-1.launchimage\Default-568h%402x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ihbi-project.csproj">
