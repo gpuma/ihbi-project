@@ -9,7 +9,7 @@ namespace ihbiproject
 	{
 		public App ()
 		{
-            MainPage = new Login();
+			MainPage = new Login();
 		}
 
 		protected override void OnStart ()
