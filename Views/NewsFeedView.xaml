@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ihbiproject.Views.NewsFeedView">
+  <!--TODO: check if stacklayout is necessary-->
+  <!--TODO: make items clickable-->
+  <StackLayout>
+    <ScrollView Orientation="Vertical" VerticalOptions="FillAndExpand">
+      <ListView x:Name="lstNewsFeedItems" HasUnevenRows="True">
+        <ListView.ItemTemplate VerticalOptions="FillAndExpand">
+          <DataTemplate>
+           <ViewCell>
+							<ViewCell.View>
+                <StackLayout Orientation="Vertical" VerticalOptions="FillAndExpand">
+                  <Label Text="{Binding Title}" FontSize="20"/>
+                  <Label Text="{Binding Description}" VerticalOptions="FillAndExpand" FontSize="15" />
+                  <Image Source="{Binding Image}" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Aspect="AspectFill"/>
+              </StackLayout>
+            </ViewCell.View>
+							</ViewCell>
+          </DataTemplate>
+        </ListView.ItemTemplate>
+      </ListView>
+    </ScrollView>
+  </StackLayout>
+</ContentPage>

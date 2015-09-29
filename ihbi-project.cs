@@ -9,8 +9,9 @@ namespace ihbiproject
 	{
 		public App ()
 		{
-			MainPage = new Login();
-		}
+            //entry point needs to be wrapped in a NavigationPage so we can push pages on top of it (basic navigation)
+            MainPage = new NavigationPage(new LoginView());
+        }
 
 		protected override void OnStart ()
 		{
