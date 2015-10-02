@@ -6,10 +6,16 @@ namespace ihbiproject
 {
 	public class ExerciseView : ContentPage
 	{
+
+
 		public ExerciseView ()
 		{
+			NavigationPage.SetHasBackButton (this, true);
 			this.Title = "Exercise";
+
+
 			Content = new TableView { 
+				
 				Root = new TableRoot{
 					new TableSection{
 						new EntryCell {Label = "Minutes exercised"},

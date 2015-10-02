@@ -10,7 +10,7 @@ namespace ihbiproject
 		public App ()
 		{
             //entry point needs to be wrapped in a NavigationPage so we can push pages on top of it (basic navigation)
-			MainPage = new NavigationPage(new FoodView());
+			MainPage = new NavigationPage(new MainTabbedPage());
         }
 
 		protected override void OnStart ()
