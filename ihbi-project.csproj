@@ -85,5 +85,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+    <None Include="Views\calendar.png" />
+    <None Include="Views\dailycheckin.png" />
+    <None Include="Views\event.png" />
+    <None Include="Views\new.png" />
+    <None Include="Views\notification.png" />
   </ItemGroup>
 </Project>
