@@ -49,17 +49,7 @@ namespace ihbiproject
 			// This binding is necessary to label the tabs in
 			// the TabbedPage.
 			this.SetBinding (ContentPage.TitleProperty, "Name");
-			// BoxView to show the color.
-			BoxView boxView = new BoxView {
-				WidthRequest = 100,
-				HeightRequest = 100,
-				HorizontalOptions = LayoutOptions.Center
-			};
-			boxView.SetBinding (BoxView.ColorProperty, "Color");
-
-			// Build the page
-			this.Content = boxView;
-
+		
 		}
 	}
 }

@@ -18,11 +18,8 @@ namespace ihbiproject
 
 		public DailyCheckin()
 		{
-			Label header = new Label {
-				Text = "Daily Checkin",
-				HorizontalOptions = LayoutOptions.Center
-			};
 
+			this.Title = "Daily Check-in";
 			// Define some data.
 			List<listItems> CheckinList = new List<listItems> {
 				new listItems ("Exercise"),
@@ -68,7 +65,6 @@ namespace ihbiproject
 			// Build the page.
 			this.Content = new StackLayout {
 				Children = {
-					header,
 					listView
 				}
 			};
