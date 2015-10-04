@@ -17,6 +17,7 @@ namespace ihbiproject.Data
         }
         static List<IHBIUser> users;
         static List<NewsFeedItem> newsfeeditems;
+        public static Dictionary<string, string> Moods { get; set; }
         public static void InsertDummyData()
         {
             //dummy users
@@ -37,6 +38,18 @@ namespace ihbiproject.Data
                     new NewsFeedItem() {Title = "Mary Sue", Description = "Check out my organic, gmo-free, locally harvested alfalfa smoothie recipe on my blog!!!", Image="http://cdn.nutrientrich.com/wp-content/uploads/2013/06/juice2.jpg" },
                     new NewsFeedItem() {Title = "New member added to the fb group", Description = "Yuri is new to the group. Say hi to her ;)" },
                 });
+
+            //mood filenames and description
+            Moods = new Dictionary<string, string>();
+            Moods.Add("mood_01.png", "glad");
+            Moods.Add("mood_02.png", "happy");
+            Moods.Add("mood_03.png", "very happy");
+            Moods.Add("mood_04.png", "mischievous");
+            Moods.Add("mood_05.png", "cool");
+            Moods.Add("mood_06.png", "dumb");
+            Moods.Add("mood_07.png", "uncomfortable");
+            Moods.Add("mood_08.png", "sad");
+            Moods.Add("mood_09.png", "very sad");
         }
         public static IHBIUser GetUser(string username, string password)
         {
