@@ -1,6 +1,7 @@
 ﻿using System;
 
 using Xamarin.Forms;
+using ihbiproject.Views;
 
 namespace ihbiproject
 {
@@ -10,16 +11,20 @@ namespace ihbiproject
 		{
 			this.Title = "Younger Women Wellness";
 
-			this.ItemsSource = new MainMenu[] {
-				new MainMenu ("News Feed"),
-				new MainMenu ("Daily Checkin"),
-				new MainMenu ("Schedule"),
-				new MainMenu ("Events"),
-				new MainMenu ("Notification")
-			};
+            //this.ItemsSource = new MainMenu[] {
+            //	new MainMenu ("News Feed"),
+            //	new MainMenu ("Daily Checkin"),
+            //	new MainMenu ("Schedule"),
+            //	new MainMenu ("Events"),
+            //	new MainMenu ("Notification")
+            //};
+            this.Children.Add(new NewsFeedView());
+            this.Children.Add(new DailyCheckin());
+            //this.Children.Add(new Sche);
+            //this.Children.Add(new NewsFeedView);
 
 
-			this.ItemTemplate = new DataTemplate (() => { 
+            this.ItemTemplate = new DataTemplate (() => { 
 				return new MenuPage (); 
 			});
 		}

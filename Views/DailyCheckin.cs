@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Xamarin.Forms;
+using ihbiproject.Views;
 
 namespace ihbiproject
 {
@@ -8,13 +9,24 @@ namespace ihbiproject
 	{
 		class listItems
 		{
-			public listItems(string itemName)
+            //the page to push
+            internal Page content;
+			public listItems(string itemName, Page page)
 			{
 				this.Name = itemName;
+                this.content = page;            
 			}
 
 			public string Name { private set; get; }
 		};
+
+        void ListView_Tapped(object sender, ItemTappedEventArgs e)
+        {
+            var lv = sender as ListView;
+            var selected = lv.SelectedItem as listItems;
+            if(selected.content != null)
+                Navigation.PushAsync(selected.content);
+        }
 
 		public DailyCheckin()
 		{
@@ -22,9 +34,9 @@ namespace ihbiproject
 			this.Title = "Daily Check-in";
 			// Define some data.
 			List<listItems> CheckinList = new List<listItems> {
-				new listItems ("Exercise"),
-				new listItems ("Food"),
-				new listItems ("Wellness"),
+				new listItems ("Exercise", null),
+				new listItems ("Food", null),
+				new listItems ("Wellness", new WellnessView()),
 			};
 
 			// Create the ListView.
@@ -58,6 +70,9 @@ namespace ihbiproject
 					};
 				})
 			};
+
+            //we subscribe it to the event
+            listView.ItemTapped += ListView_Tapped;
 
 			// Accomodate iPhone status bar.
 			this.Padding = new Thickness (10, Device.OnPlatform (20, 0, 0), 10, 5);

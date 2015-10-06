@@ -1,12 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="ihbiproject.Views.NewsFeedView">
+             x:Class="ihbiproject.Views.NewsFeedView"
+             Title="News Feed">
   <!--TODO: check if stacklayout is necessary-->
   <!--TODO: make items clickable-->
   <StackLayout>
     <ScrollView Orientation="Vertical" VerticalOptions="FillAndExpand">
-      <ListView x:Name="lstNewsFeedItems" HasUnevenRows="True">
+      <ListView x:Name="lstNewsFeedItems" HasUnevenRows="True" ItemTapped="OnNewsFeedItem_Tapped">
         <ListView.ItemTemplate VerticalOptions="FillAndExpand">
           <DataTemplate>
            <ViewCell>
