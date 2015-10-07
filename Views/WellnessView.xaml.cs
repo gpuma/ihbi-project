@@ -11,11 +11,13 @@ namespace ihbiproject.Views
 {
     public partial class WellnessView : ContentPage
     {
+		
         double stepValue = 1.0;
         public WellnessViewModel vm { get { return (WellnessViewModel)BindingContext; } }
         public WellnessView()
         {
             InitializeComponent();
+			this.Title = "Wellness";
             BindingContext = new WellnessViewModel();
             AddMoodOptions();
         }

@@ -8,7 +8,7 @@ namespace ihbiproject
 	{
 		public EventView ()
 		{
-			Content = new StackLayout { 
+			this.Content = new StackLayout { 
 				Children = {
 					new Label { Text = "Hello Event Page" }
 				}

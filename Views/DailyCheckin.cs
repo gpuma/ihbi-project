@@ -31,11 +31,10 @@ namespace ihbiproject
 		public DailyCheckin()
 		{
 
-			this.Title = "Daily Check-in";
 			// Define some data.
 			List<listItems> CheckinList = new List<listItems> {
-				new listItems ("Exercise", null),
-				new listItems ("Food", null),
+				new listItems ("Exercise", new ExerciseView()),
+				new listItems ("Food", new FoodView()),
 				new listItems ("Wellness", new WellnessView()),
 			};
 

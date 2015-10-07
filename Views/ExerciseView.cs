@@ -18,7 +18,7 @@ namespace ihbiproject
 				
 				Root = new TableRoot{
 					new TableSection{
-						new EntryCell {Label = "Minutes exercised"},
+						new TextCell {Text = "Minutes exercised"},
 						new SwitchCell {Text = "Stretching"},
 						new SwitchCell {Text = "Pelvic floor exercise"},
 						new EntryCell {Placeholder = "Type of Exercise"}
