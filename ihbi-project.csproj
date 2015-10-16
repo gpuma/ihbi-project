@@ -51,16 +51,23 @@
     <Compile Include="Views\LoginView.xaml.cs">
       <DependentUpon>LoginView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\DailyCheckin.cs" />
     <Compile Include="Views\MainTabbedPage.cs" />
     <Compile Include="Views\NewsFeedView.xaml.cs">
       <DependentUpon>NewsFeedView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\EventView.cs" />
-    <Compile Include="Views\ExerciseView.cs" />
     <Compile Include="Views\NotificationView.cs" />
     <Compile Include="Views\ScheduleView.cs" />
-    <Compile Include="Views\FoodView.cs" />
+    <Compile Include="Views\DailyCheckinView.xaml.cs">
+      <DependentUpon>DailyCheckinView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FoodView.xaml.cs">
+      <DependentUpon>FoodView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModels\FoodViewModel.cs" />
+    <Compile Include="Views\ExerciseView.xaml.cs">
+      <DependentUpon>ExerciseView.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Import Project="packages\Xamarin.Forms.1.5.0.6447\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets" Condition="Exists('packages\Xamarin.Forms.1.5.0.6447\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets')" />
@@ -68,6 +75,15 @@
     <EmbeddedResource Include="Views\LoginView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\DailyCheckinView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\FoodView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ExerciseView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
