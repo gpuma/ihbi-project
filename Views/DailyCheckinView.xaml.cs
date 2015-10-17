@@ -7,17 +7,15 @@ namespace ihbiproject.Views
 {
 	public partial class DailyCheckinView : ContentPage
 	{
-
-		public DailyCheckinView ()
+        List<listItems> CheckinList = new List<listItems> {
+                new listItems ("Exercise", new ExerciseView ()),
+                new listItems ("Food", new FoodView ()),
+                new listItems ("Wellness", new WellnessView ()),
+            };
+        public DailyCheckinView ()
 		{
 			InitializeComponent ();
-
-			List<listItems> CheckinList = new List<listItems> {
-				new listItems ("Exercise", new ExerciseView ()),
-				new listItems ("Food", new FoodView ()),
-				new listItems ("Wellness", new WellnessView ()),
-			};
-
+            list.ItemsSource = CheckinList;
 		}
 
 		class listItems
@@ -30,8 +28,6 @@ namespace ihbiproject.Views
 				this.Name = itemName;
 				this.content = page;            
 			}
-
-
 
 			public string Name { private set; get; }
 		}

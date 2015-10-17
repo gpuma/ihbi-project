@@ -4,7 +4,7 @@
 			  x:Class="ihbiproject.Views.DailyCheckinView"
 			  Title = "Daily Check-In">
 
-	<ListView x:Name = "list" ItemsSource = "CheckinList" 
+	<ListView x:Name = "list"
 			  ItemTapped = "CheckinList_Tapped">
 		<ListView.ItemTemplate>
 			<DataTemplate>

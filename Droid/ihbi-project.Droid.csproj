@@ -87,7 +87,7 @@
     <AndroidResource Include="Resources\drawable\calendar.png" />
     <AndroidResource Include="Resources\drawable\dailycheckin.png" />
     <AndroidResource Include="Resources\drawable\event.png" />
-    <AndroidResource Include="Resources\drawable\new.png" />
+    <AndroidResource Include="Resources\drawable\newcaca.png" />
     <AndroidResource Include="Resources\drawable\notification.png" />
   </ItemGroup>
   <ItemGroup>
