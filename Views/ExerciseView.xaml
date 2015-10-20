@@ -5,10 +5,10 @@
 	<TableView Intent="Form">
     <TableRoot>
     	<TableSection>
-    		<TextCell Text="Minutes Exercised" />
-      		<SwitchCell Text="Stretching"  />
-      		<SwitchCell Text="Pelvic floor exercise"  />
-      		<EntryCell Placeholder ="Type of exercise" />
+      			<EntryCell Label ="Type of exercise" />
+    			<EntryCell Label="Minutes Exercised" />
+      			<SwitchCell Text="Stretching"  />
+      			<SwitchCell Text="Pelvic floor exercise"  />
       	</TableSection>
     </TableRoot>
 </TableView>
