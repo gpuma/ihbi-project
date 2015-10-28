@@ -24,7 +24,7 @@ namespace ihbiproject.Droid
 				authorizeUrl: new Uri ("https://m.facebook.com/dialog/oauth/"), // the auth URL for the service
 				redirectUrl: new Uri ("http://www.facebook.com/connect/login_success.html")); // the redirect URL for the service
 
-			auth.Completed += (sender, eventArgs) => {
+			auth.Completed += async (sender, eventArgs) => {
 				if (eventArgs.IsAuthenticated) {
 					var accessToken = eventArgs.Account.Properties ["access_token"].ToString ();
 					var expiresIn = Convert.ToDouble (eventArgs.Account.Properties ["expires_in"]);
