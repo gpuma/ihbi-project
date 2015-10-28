@@ -55,6 +55,8 @@
 				<true/>
 				<key>NSExceptionRequiresForwardSecrecy</key>
 				<false/>
+				<key>NSExceptionAllowsInsecureHTTPLoads</key>
+				<true/>
 			</dict>
 			<key>fbcdn.net</key>
 			<dict>
@@ -62,6 +64,8 @@
 				<true/>
 				<key>NSExceptionRequiresForwardSecrecy</key>
 				<false/>
+				<key>NSExceptionAllowsInsecureHTTPLoads</key>
+				<true/>
 			</dict>
 			<key>akamaihd.net</key>
 			<dict>
@@ -69,8 +73,12 @@
 				<true/>
 				<key>NSExceptionRequiresForwardSecrecy</key>
 				<false/>
+				<key>NSExceptionAllowsInsecureHTTPLoads</key>
+				<true/>
 			</dict>
 		</dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
 	</dict>
 </dict>
 </plist>
