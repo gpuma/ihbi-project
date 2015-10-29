@@ -8,6 +8,7 @@ using Xamarin.Forms.Platform.Android;
 using Newtonsoft.Json.Linq;
 
 
+
 [assembly: ExportRenderer (typeof (ihbiproject.LoginPage), typeof (ihbiproject.Droid.LoginPageRenderer))]
 
 namespace ihbiproject.Droid
@@ -16,6 +17,13 @@ namespace ihbiproject.Droid
 	{
 		public LoginPageRenderer()
 		{
+
+			string json = @"{""name"":""Hayley Lee"",""id"":""115399638820888""}";
+			System.Diagnostics.Debug.WriteLine ("======>json = "+ json);
+			var jsonObj = JObject.Parse (json);
+
+
+			System.Diagnostics.Debug.WriteLine ("======>in Android LoginPageRenderer");
 			var activity = this.Context as Activity;
 
 			var auth = new OAuth2Authenticator (
@@ -23,7 +31,7 @@ namespace ihbiproject.Droid
 				scope: "", // the scopes for the particular API you're accessing, delimited by "+" symbols
 				authorizeUrl: new Uri ("https://m.facebook.com/dialog/oauth/"), // the auth URL for the service
 				redirectUrl: new Uri ("http://www.facebook.com/connect/login_success.html")); // the redirect URL for the service
-
+			System.Diagnostics.Debug.WriteLine ("======>in after OAuth2");
 			auth.Completed += async (sender, eventArgs) => {
 				if (eventArgs.IsAuthenticated) {
 					var accessToken = eventArgs.Account.Properties ["access_token"].ToString ();
@@ -43,6 +51,7 @@ namespace ihbiproject.Droid
 
 				}
 			};
+			System.Diagnostics.Debug.WriteLine ("======>after OAuth");
 
 		}
 	}
