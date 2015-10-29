@@ -9,6 +9,7 @@ namespace ihbiproject
 	{
 		public MainTabbedPage ()
 		{
+			
 			this.Children.Add (new NewsFeedView () { Title = "News Feed", Icon = "new_icon.png" });
 			this.Children.Add (new DailyCheckinView () { Title = "Daily Checkin", Icon = "dailycheckin.png" });
 			this.Children.Add (new ScheduleView () { Title = "Schedule", Icon = "calendar.png" });
