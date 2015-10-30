@@ -20,7 +20,17 @@ namespace ihbiproject
 				return new MenuPage (); 
 			});
 		}
+
+		protected override void OnAppearing ()
+		{
+			base.OnAppearing ();
+			System.Diagnostics.Debug.WriteLine ("====> in Base Content" + App.Instance.IsAuthenticated);
+			if (!App.Instance.IsAuthenticated) {
+				Navigation.PushModalAsync(new LoginPage());
+			}
+		}
 	}
+
 
 	// Data type:
 	class MainMenu
@@ -39,7 +49,7 @@ namespace ihbiproject
 	}
 
 	// Format page
-	class MenuPage : ContentPage
+	class MenuPage : BaseContentPage
 	{
 		public MenuPage ()
 		{
