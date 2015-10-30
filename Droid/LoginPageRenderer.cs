@@ -17,6 +17,7 @@ namespace ihbiproject.Droid
 	{
 		protected override void OnElementChanged (ElementChangedEventArgs<Page> e)
 		{
+			System.Diagnostics.Debug.WriteLine ("======>Login Page OAuth");
 			base.OnElementChanged (e);
 			var activity = this.Context as Activity;
 			var auth = new OAuth2Authenticator (
@@ -35,7 +36,7 @@ namespace ihbiproject.Droid
 						var obj = JObject.Parse (response.GetResponseText ());
 						var id = obj ["id"].ToString ().Replace ("\"", "");
 						var name = obj ["name"].ToString ().Replace ("\"","");
-					App.SuccessfulLoginAction.Invoke();
+						App.Instance.SuccessfulLoginAction.Invoke();
 					} catch (Exception ex) {
 						System.Diagnostics.Debug.WriteLine("========> Error getting from GraphAPI" +ex);
 					}
@@ -51,7 +52,7 @@ namespace ihbiproject.Droid
 
 		public LoginPageRenderer()
 		{
-			
+			System.Diagnostics.Debug.WriteLine ("======>Login Page OAuth");
 		}
 	}
 }

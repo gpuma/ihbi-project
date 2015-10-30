@@ -51,7 +51,8 @@ namespace ihbiproject
 			var maintabbedPage = new MainTabbedPage();
 
 			_NavPage = new NavigationPage(maintabbedPage);
-
+			//System.Diagnostics.Debug.WriteLine ("======>Login Page OAuth");
+			//_NavPage = new NavigationPage(new LoginPage());
 			return _NavPage;
 		}
 
