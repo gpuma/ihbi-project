@@ -39,9 +39,8 @@ namespace ihbiproject.iOS
 					DismissViewController (true, null);
 
 					if (eventArgs.IsAuthenticated) {
+						
 						var accessToken = eventArgs.Account.Properties ["access_token"].ToString ();
-						System.Diagnostics.Debug.WriteLine (accessToken);
-			
 						var expiresIn = Convert.ToDouble (eventArgs.Account.Properties ["expires_in"]);
 						var expiryDate = DateTime.Now + TimeSpan.FromSeconds (expiresIn);
 						var request = new OAuth2Request ("GET", new Uri ("https://graph.facebook.com/me"), null, eventArgs.Account);
@@ -55,6 +54,8 @@ namespace ihbiproject.iOS
 						var id = obj ["id"].ToString ().Replace ("\"", "");
 						var name = obj ["name"].ToString ().Replace ("\"", "");
 
+						App.Instance.SaveToken(accessToken);
+						AccountStore.Create ().Save (eventArgs.Account, "WellnessFB");
 
 						//Once the login is successful, 
 						//fire off a Xamarin.Forms navigation via App.SuccessfulLoginAction.Invoke();.
