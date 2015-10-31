@@ -11,13 +11,11 @@ using Java.Security;
 
 namespace ihbiproject.Droid
 {
-	[Activity(Theme = "@style/Theme.Splash", MainLauncher = true, NoHistory = true)]
-	public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsApplicationActivity
+	[Activity (Label = "ihbi-project.Droid", Icon = "@drawable/icon", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]	public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsApplicationActivity
 	{
 		protected override void OnCreate (Bundle bundle)
 		{
 			base.OnCreate (bundle);
-			StartActivity(typeof(Activity));
 
 			PackageInfo info = this.PackageManager.GetPackageInfo ("com.ihbi.project", PackageInfoFlags.Signatures);
 

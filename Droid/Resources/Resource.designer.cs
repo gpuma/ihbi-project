@@ -4800,9 +4800,6 @@ namespace ihbiproject.Droid
 			// aapt resource value: 0x7f050013
 			public const int Theme_MediaRouter_Light = 2131034131;
 			
-			// aapt resource value: 0x7f050144
-			public const int Theme_Splash = 2131034436;
-			
 			// aapt resource value: 0x7f0500fd
 			public const int ThemeOverlay_AppCompat = 2131034365;
 			

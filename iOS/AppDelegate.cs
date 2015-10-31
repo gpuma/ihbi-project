@@ -30,23 +30,33 @@ namespace ihbiproject.iOS
 		public void  OnActivated()
 		{
 			// Handle when your app starts
-
-			IEnumerable<Account> accounts = AccountStore.Create ().FindAccountsForService ("WellnessFB");
 		}
 
 		public void DidEnterBackground ()
 		{
 			// Handle when your app sleeps
-			IEnumerable<Account> accounts = AccountStore.Create ().FindAccountsForService ("WellnessFB");
 
 		}
 
 		public void WillEnterForeground ()
 		{
 			// Handle when your app resumes
-			IEnumerable<Account> accounts = AccountStore.Create ().FindAccountsForService ("WellnessFB");
 
 		}
+			
+//			public void getStoredAccount(){
+//			IEnumerable<Account> accounts = AccountStore.Create().FindAccountsForService ("WellnessFB");
+//			var enumerable = accounts as IList<Account> ?? accounts.ToList ();
+//			var account = enumerable.FirstOrDefault () == null ? null : enumerable.First ();
+//
+//			if (account == null) {
+//				return null;
+//			} else {
+//				
+//				
+//			}
+//				
+//		}
 
 	}
 }
