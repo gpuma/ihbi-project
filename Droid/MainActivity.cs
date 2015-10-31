@@ -21,18 +21,19 @@ namespace ihbiproject.Droid
 
 			PackageInfo info = this.PackageManager.GetPackageInfo ("com.ihbi.project", PackageInfoFlags.Signatures);
 
-			foreach (Android.Content.PM.Signature signature in info.Signatures)
-			{
-				MessageDigest md = MessageDigest.GetInstance("SHA");
-				md.Update(signature.ToByteArray());
-
-				string keyhash = Convert.ToBase64String(md.Digest());
-				Console.WriteLine("KeyHash:"+ keyhash);
-			}
+//			foreach (Android.Content.PM.Signature signature in info.Signatures)
+//			{
+//				MessageDigest md = MessageDigest.GetInstance("SHA");
+//				md.Update(signature.ToByteArray());
+//
+//				string keyhash = Convert.ToBase64String(md.Digest());
+//				Console.WriteLine("KeyHash:"+ keyhash);
+//			}
 
 			global::Xamarin.Forms.Forms.Init (this, bundle);
 
-			LoadApplication (new App ());
+			//LoadApplication (new App ());
+			SetPage (App.Instance.GetMainPage());
 		}
 	}
 }
