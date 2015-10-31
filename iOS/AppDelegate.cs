@@ -5,6 +5,7 @@ using Xamarin.Forms;
 using Foundation;
 using UIKit;
 using ihbiproject;
+using Xamarin.Auth;
 
 namespace ihbiproject.iOS
 {
@@ -24,5 +25,28 @@ namespace ihbiproject.iOS
 
 			return true;
 		}
+
+
+		public void  OnActivated()
+		{
+			// Handle when your app starts
+
+			IEnumerable<Account> accounts = AccountStore.Create ().FindAccountsForService ("WellnessFB");
+		}
+
+		public void DidEnterBackground ()
+		{
+			// Handle when your app sleeps
+			IEnumerable<Account> accounts = AccountStore.Create ().FindAccountsForService ("WellnessFB");
+
+		}
+
+		public void WillEnterForeground ()
+		{
+			// Handle when your app resumes
+			IEnumerable<Account> accounts = AccountStore.Create ().FindAccountsForService ("WellnessFB");
+
+		}
+
 	}
 }
