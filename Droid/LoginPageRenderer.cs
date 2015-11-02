@@ -29,6 +29,7 @@ namespace ihbiproject.Droid
 				if (eventArgs.IsAuthenticated) {
 					try {
 						var accessToken = eventArgs.Account.Properties ["access_token"].ToString ();
+						App.Instance.SaveToken(accessToken);
 						var expiresIn = Convert.ToDouble (eventArgs.Account.Properties ["expires_in"]);
 						var expiryDate = DateTime.Now + TimeSpan.FromSeconds (expiresIn);
 						var request = new OAuth2Request ("GET", new Uri ("https://graph.facebook.com/me"), null, eventArgs.Account);
