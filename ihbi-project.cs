@@ -48,6 +48,8 @@ namespace ihbiproject
 
 		public Page GetMainPage ()
 		{
+
+
 			var maintabbedPage = new MainTabbedPage();
 
 			_NavPage = new NavigationPage(maintabbedPage);
@@ -78,6 +80,22 @@ namespace ihbiproject
 			get {
 				return new Action (() => _NavPage.Navigation.PopModalAsync ());
 			}
+		}
+
+		protected override void OnStart ()
+		{
+			// Handle when your app starts
+
+		}
+
+		protected override void OnSleep ()
+		{
+			// Handle when your app sleeps
+		}
+
+		protected override void OnResume ()
+		{
+			// Handle when your app resumes
 		}
 
 

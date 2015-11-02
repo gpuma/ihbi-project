@@ -113,6 +113,9 @@
     <AndroidResource Include="Resources\drawable\dailycheckin.png" />
     <AndroidResource Include="Resources\drawable\event.png" />
     <AndroidResource Include="Resources\drawable\notification.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\YWWP72.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\YWWP96.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\splash.png" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\mood_01.png" />
