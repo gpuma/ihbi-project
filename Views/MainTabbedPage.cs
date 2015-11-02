@@ -24,10 +24,13 @@ namespace ihbiproject
 		protected override void OnAppearing ()
 		{
 			base.OnAppearing ();
-			System.Diagnostics.Debug.WriteLine ("====> in Base Content" + App.Instance.IsAuthenticated);
-			if (!App.Instance.IsAuthenticated) {
-				Navigation.PushModalAsync(new LoginPage());
-			}
+			System.Diagnostics.Debug.WriteLine ("====> OnAppearing" + App.Instance.IsAuthenticated);
+				if (!App.Instance.IsAuthenticated) {
+					Navigation.PushModalAsync (new LoginPage ());
+				} else {
+					System.Diagnostics.Debug.WriteLine ("return");
+				}
+
 		}
 	}
 

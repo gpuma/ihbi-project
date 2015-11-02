@@ -48,6 +48,8 @@ namespace ihbiproject
 
 		public Page GetMainPage ()
 		{
+
+
 			var maintabbedPage = new MainTabbedPage();
 
 			_NavPage = new NavigationPage(maintabbedPage);

@@ -19,44 +19,52 @@ namespace ihbiproject.iOS
 			Forms.Init ();
 
 			window = new UIWindow (UIScreen.MainScreen.Bounds);
-
 			window.RootViewController = App.Instance.GetMainPage().CreateViewController ();
+
 			window.MakeKeyAndVisible ();
 
 			return true;
 		}
 
 
-		public void  OnActivated()
+		public override void  OnActivated(UIApplication app)
 		{
 			// Handle when your app starts
+			System.Diagnostics.Debug.WriteLine ("======>start OnActivated");
+			getStoredAccount ();
+
 		}
 
-		public void DidEnterBackground ()
+		public override void DidEnterBackground (UIApplication app)
 		{
 			// Handle when your app sleeps
+			System.Diagnostics.Debug.WriteLine ("======>start DidEnterBackground");
+
+
 
 		}
 
-		public void WillEnterForeground ()
+		public override void WillEnterForeground (UIApplication app)
 		{
 			// Handle when your app resumes
+			System.Diagnostics.Debug.WriteLine ("======>start WillEnterForeground");
+
+
 
 		}
 			
-//			public void getStoredAccount(){
-//			IEnumerable<Account> accounts = AccountStore.Create().FindAccountsForService ("WellnessFB");
-//			var enumerable = accounts as IList<Account> ?? accounts.ToList ();
-//			var account = enumerable.FirstOrDefault () == null ? null : enumerable.First ();
-//
-//			if (account == null) {
-//				return null;
-//			} else {
-//				
-//				
-//			}
-//				
-//		}
+		public void getStoredAccount(){
+			System.Diagnostics.Debug.WriteLine ("======>start getStoreAccount");
+
+			var accounts = AccountStore.Create ().FindAccountsForService ("WellnessFB");
+			var account = accounts.FirstOrDefault ();
+			var accessToken = account.Properties ["access_token"].ToString ();
+			App.Instance.SaveToken(accessToken);
+
+			System.Diagnostics.Debug.WriteLine ("======>WellnessFB account" + account);
+
+				
+		}
 
 	}
 }

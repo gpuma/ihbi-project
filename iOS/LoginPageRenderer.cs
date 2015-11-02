@@ -20,8 +20,7 @@ namespace ihbiproject.iOS
 		{
 			base.ViewDidAppear (animated);
 
-			// Fixed the issue that on iOS 8, the modal wouldn't be popped.
-			// url : http://stackoverflow.com/questions/24105390/how-to-login-to-facebook-in-xamarin-forms
+
 			if(	! IsShown ) {
 
 				IsShown = true;
@@ -56,6 +55,8 @@ namespace ihbiproject.iOS
 
 						App.Instance.SaveToken(accessToken);
 						AccountStore.Create ().Save (eventArgs.Account, "WellnessFB");
+						System.Diagnostics.Debug.WriteLine ("======>after save account");
+						System.Diagnostics.Debug.WriteLine (AccountStore.Create().FindAccountsForService ("WellnessFB"));
 
 						//Once the login is successful, 
 						//fire off a Xamarin.Forms navigation via App.SuccessfulLoginAction.Invoke();.
