@@ -37,7 +37,7 @@ namespace ihbiproject.Views
             await Navigation.PushAsync(new NewsFeedView());
             //todo: move to new page
         }
-        async void OnSignup_Clicked(object sender, EventArgs args)
+        void OnSignup_Clicked(object sender, EventArgs args)
         {
             throw new NotImplementedException("onsignup not implemented");
         }

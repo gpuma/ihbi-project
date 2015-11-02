@@ -22,12 +22,16 @@ namespace ihbiproject.Views
         }
 
         public NewsFeedView()
-        {
+        {	
+			System.Diagnostics.Debug.WriteLine ("===>> In News Feed");
+			DependencyService.Get<IFaceBookFeed> ().getFeed ();
+			System.Diagnostics.Debug.WriteLine ("===>> After DPS");
             //todo: check order of calls
             InitializeComponent();
             BindingContext = new NewsFeedViewModel();
             vm.LoadNewsFeed();
             lstNewsFeedItems.ItemsSource = vm.NewsFeedItems;
+
         }
     }
 }
