@@ -54,7 +54,7 @@ namespace ihbiproject.iOS
 						var name = obj ["name"].ToString ().Replace ("\"", "");
 
 						App.Instance.SaveToken(accessToken);
-						AccountStore.Create ().Save (eventArgs.Account, "WellnessFB");
+ 						AccountStore.Create ().Save (eventArgs.Account, "WellnessFB");
 						System.Diagnostics.Debug.WriteLine ("======>after save account");
 						System.Diagnostics.Debug.WriteLine (AccountStore.Create().FindAccountsForService ("WellnessFB"));
 
