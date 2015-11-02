@@ -20,6 +20,10 @@ namespace ihbiproject.iOS
 			Forms.Init ();
 
 			window = new UIWindow (UIScreen.MainScreen.Bounds);
+			System.Diagnostics.Debug.WriteLine ("======>start app and get storedaccount");
+
+			getStoredAccount ();
+
 			window.RootViewController = App.Instance.GetMainPage().CreateViewController ();
 
 			window.MakeKeyAndVisible ();
@@ -32,7 +36,9 @@ namespace ihbiproject.iOS
 		{
 			// Handle when your app starts
 			System.Diagnostics.Debug.WriteLine ("======>start OnActivated");
-			getStoredAccount ();
+			if (!App.Instance.IsAuthenticated) {
+				getStoredAccount ();
+			}
 		}
 
 		public override void DidEnterBackground (UIApplication app)
@@ -45,7 +51,9 @@ namespace ihbiproject.iOS
 		{
 			// Handle when your app resumes
 			System.Diagnostics.Debug.WriteLine ("======>start WillEnterForeground");
-			getStoredAccount ();
+			if (!App.Instance.IsAuthenticated) {
+				getStoredAccount ();
+			}
 		}
 			
 		public void getStoredAccount(){
