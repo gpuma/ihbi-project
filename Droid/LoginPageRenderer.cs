@@ -6,6 +6,7 @@ using Xamarin.Auth;
 using Android.App;
 using Xamarin.Forms.Platform.Android;
 using Newtonsoft.Json.Linq;
+using Facebook;
 
 
 
@@ -38,6 +39,7 @@ namespace ihbiproject.Droid
 						var id = obj ["id"].ToString ().Replace ("\"", "");
 						var name = obj ["name"].ToString ().Replace ("\"","");
 						App.Instance.SuccessfulLoginAction.Invoke();
+						fb(accessToken);
 					} catch (Exception ex) {
 						System.Diagnostics.Debug.WriteLine("========> Error getting from GraphAPI" +ex);
 					}
@@ -50,6 +52,27 @@ namespace ihbiproject.Droid
 	
 		}
 
+
+		public void fb(string token)
+		{
+			FacebookClient fb = new FacebookClient (token);
+			fb.GetCompleted += (sender, e) => {
+				System.Diagnostics.Debug.WriteLine("in FB Completed");
+				var ex = e.Error;
+				if (ex != null){
+					System.Diagnostics.Debug.WriteLine("=====> FB Error");
+				}else{
+				//var t = (String) e.GetResultData();
+
+				//var res = JObject.Parse (t);
+					System.Diagnostics.Debug.WriteLine("====>> in FB"+e.GetResultData().ToString());
+				}
+
+			};
+			fb.GetTaskAsync ("1698903283671929?fields=feed");
+
+
+		}
 
 		public LoginPageRenderer()
 		{
