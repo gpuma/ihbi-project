@@ -33,6 +33,21 @@ namespace ihbiproject.Droid
 			//LoadApplication (new App ());
 			SetPage (App.Instance.GetMainPage());
 		}
+
+		protected override void OnStart ()
+		{
+			base.OnStart ();
+		}
+
+		protected override void OnResume ()
+		{
+			base.OnResume ();
+		}
+
+		protected override void OnPause ()
+		{
+			base.OnPause ();
+		}
 	}
 }
 
