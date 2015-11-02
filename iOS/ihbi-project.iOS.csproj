@@ -106,6 +106,7 @@
     </ImageAsset>
     <None Include="packages.config" />
     <Compile Include="LoginPageRenderer.cs" />
+    <Compile Include="FaceBookFeed.cs" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="RootViewController.designer.cs">

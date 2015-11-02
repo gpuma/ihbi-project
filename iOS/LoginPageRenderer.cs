@@ -6,6 +6,7 @@ using ihbiproject;
 using UIKit;
 using Newtonsoft.Json.Linq;
 using ihbiproject.Views;
+using Facebook;
 
 //"maps" our LoginPageRenderer to the LoginPage
 [assembly: ExportRenderer (typeof (ihbiproject.LoginPage), typeof (ihbiproject.iOS.LoginPageRenderer))]
@@ -57,6 +58,10 @@ namespace ihbiproject.iOS
 						App.Instance.SaveToken(accessToken);
 						AccountStore.Create ().Save (eventArgs.Account, "WellnessFB");
 
+						System.Diagnostics.Debug.WriteLine("Before FB accessToken");
+						fb(accessToken);
+						System.Diagnostics.Debug.WriteLine("after FB accessToken");
+
 						//Once the login is successful, 
 						//fire off a Xamarin.Forms navigation via App.SuccessfulLoginAction.Invoke();.
 						App.Instance.SuccessfulLoginAction.Invoke();
@@ -69,6 +74,28 @@ namespace ihbiproject.iOS
 				PresentViewController (auth.GetUI (), true, null);
 			}
 		}
+
+		public void fb(string token)
+		{
+			FacebookClient fb = new FacebookClient (token);
+			fb.GetCompleted += (sender, e) => {
+				System.Diagnostics.Debug.WriteLine("in FB Completed");
+				var ex = e.Error;
+				if (ex != null){
+					System.Diagnostics.Debug.WriteLine("=====> FB Error");
+				}else{
+					//var t = (String) e.GetResultData();
+
+					//var res = JObject.Parse (t);
+					System.Diagnostics.Debug.WriteLine("====>> in FB"+e.GetResultData().ToString());
+				}
+
+			};
+			fb.GetTaskAsync ("1698903283671929?fields=feed");
+
+
+		}
+
 	}
 }
 

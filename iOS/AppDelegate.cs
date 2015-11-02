@@ -7,6 +7,7 @@ using UIKit;
 using ihbiproject;
 using Xamarin.Auth;
 
+
 namespace ihbiproject.iOS
 {
 	[Register ("AppDelegate")]
@@ -57,6 +58,7 @@ namespace ihbiproject.iOS
 				var accessToken = account.Properties ["access_token"].ToString ();
 				App.Instance.SaveToken (accessToken);
 				System.Diagnostics.Debug.WriteLine ("======>WellnessFB account" + account);
+				//fb(accessToken);
 
 			} else {
 
