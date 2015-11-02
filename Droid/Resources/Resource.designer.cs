@@ -3349,8 +3349,17 @@ namespace ihbiproject.Droid
 			// aapt resource value: 0x7f02006f
 			public const int notification = 2130837615;
 			
+			// aapt resource value: 0x7f020073
+			public const int notification_template_icon_bg = 2130837619;
+			
 			// aapt resource value: 0x7f020070
-			public const int notification_template_icon_bg = 2130837616;
+			public const int splash = 2130837616;
+			
+			// aapt resource value: 0x7f020071
+			public const int YWWP72 = 2130837617;
+			
+			// aapt resource value: 0x7f020072
+			public const int YWWP96 = 2130837618;
 			
 			static Drawable()
 			{
