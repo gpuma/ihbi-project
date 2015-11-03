@@ -5,9 +5,8 @@
 			  Title = "Daily Check-In">
  <ContentPage.Padding> 
  	<OnPlatform x:TypeArguments="Thickness" 
- 				iOS="10, 0, 0, 0"
- 				Android="10, 0, 0, 0"
- 				WinPhone="10, 0, 0, 0" /> 
+ 				iOS="0, 0, 0, 0"
+ 				Android="0, 0, 0, 0"/> 
  </ContentPage.Padding>
 	<ListView x:Name = "list" 
 			  ItemTapped = "CheckinList_Tapped">

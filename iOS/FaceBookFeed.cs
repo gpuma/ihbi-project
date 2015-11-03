@@ -1,5 +1,5 @@
 ﻿using System;
-
+using ihbiproject.ViewModels;
 using Xamarin.Forms;
 using Facebook;
 
@@ -13,44 +13,42 @@ namespace ihbiproject.iOS
 
 		}
 
-		public string getFeed()
+		public string getFeed(NewsFeedViewModel vm)
 		{
 			
 			System.Diagnostics.Debug.WriteLine ("====> In FB Feed");
 			if (App.Instance.IsAuthenticated) {
-				return fb ();
+				return fb (vm);
 			} else {
 				return "plz login";
 			}
 
 		}
 
-		public string fb()
+		public string fb(NewsFeedViewModel vm)
 		{
 			string token = App.Instance.Token;
 			string rValue = "";
 			FacebookClient fb = new FacebookClient (token);
 			fb.GetCompleted += (sender, e) => {
-				System.Diagnostics.Debug.WriteLine("in FB Completed");
+				System.Diagnostics.Debug.WriteLine("=====>In NewsFeed FB()");
 				var ex = e.Error;
 				if (ex != null){
 					System.Diagnostics.Debug.WriteLine("=====> FB Error");
 				}else{
-					//var t = (String) e.GetResultData();
-
-					//var res = JObject.Parse (t);
-					System.Diagnostics.Debug.WriteLine("====>> in FB"+e.GetResultData().ToString());
+					System.Diagnostics.Debug.WriteLine("====>> NewsFeed FB() Results"+e.GetResultData().ToString());
 					rValue =  e.GetResultData().ToString();
+					vm.feedLoaded(rValue);
 				}
 
 			};
-
 			fb.GetTaskAsync ("1698903283671929?fields=feed{from,created_time,message,picture,place,story}");
+			return rValue;
+		}
+
 
 			//for group events
 			//fb.GetTaskAsync ("1698903283671929?fields=events{name,owner,start_time,end_time,description}");
-			return rValue;
-		}
 
 	}
 }
