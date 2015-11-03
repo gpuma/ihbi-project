@@ -12,7 +12,7 @@
   <!--TODO: make items clickable-->
   <StackLayout>
     <ScrollView Orientation="Vertical" VerticalOptions="FillAndExpand">
-      <ListView x:Name="lstNewsFeedItems" HasUnevenRows="True" ItemTapped="OnNewsFeedItem_Tapped">
+      <ListView x:Name="lstNewsFeedItems" HasUnevenRows="True" ItemTapped="OnNewsFeedItem_Tapped" IsPullToRefreshEnabled="true" Refreshing="OnRefresh">
         <ListView.ItemTemplate VerticalOptions="FillAndExpand">
           <DataTemplate>
            <ViewCell>

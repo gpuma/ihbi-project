@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,43 +16,36 @@ namespace ihbiproject.ViewModels
 {
     public class NewsFeedViewModel
     {
-        public List<NewsFeedItem> NewsFeedItems { get; set; }
+        public ObservableCollection<NewsFeedItem> NewsFeedItems { get; set; }
 
         public void LoadNewsFeed()
         {
-
-			//NewsFeedItems = db.GetNewsFeed();
-			NewsFeedItems = new List<NewsFeedItem>();
-
+			NewsFeedItems = new ObservableCollection<NewsFeedItem>();
 			String feed = DependencyService.Get<IFaceBookFeed> ().getFeed (this);
 			feedLoaded (feed);
-//			System.Diagnostics.Debug.WriteLine ("======>after DS.getFeed() feed: " + feed);
-//			var feedArray = new JArray (feed);
-//			foreach (var obj in feedArray) 
-//			{
-//				System.Diagnostics.Debug.WriteLine ("====>JsonObject" + obj.ToString ());
-//			}
-
         }
+
+		public void RefreshFeed() {
+			NewsFeedItems.Clear ();
+			String feed = DependencyService.Get<IFaceBookFeed> ().getFeed (this);
+			feedLoaded (feed);
+		}
+
+		public void ClearList() {
+			NewsFeedItems.Clear ();
+
+		}
+
 		public void feedLoaded(string feed) 
 		{
 			
 			System.Diagnostics.Debug.WriteLine ("====> in feed Loaded");
 			var topObj = JObject.Parse (feed);
-			//System.Diagnostics.Debug.WriteLine ("topObj: " + topObj.ToString ());
 			var feedObj = topObj["feed"];
-			//System.Diagnostics.Debug.WriteLine ("feed: " + feedObj.ToString ());
 			var feedArray = feedObj ["data"];
-			//System.Diagnostics.Debug.WriteLine ("=====> feedArray:"+ feedArray);				
 			foreach (var obj2 in feedArray) 
 			{
 				NewsFeedItem newitem = new NewsFeedItem ();
-//				newitem.From = obj["from"]["name"].ToString();
-//				newitem.Created_time = obj["created_time"].ToString();
-//				newitem.Message = obj["message"].ToString();
-//				newitem.Picture = "";
-//				newitem.Place = "";
-//				newitem.Story = obj["story"].ToString();
 				JObject obj = (JObject) obj2;
 				newitem.From = obj["from"]["name"].ToString();
 				newitem.Created_time = obj["created_time"].ToString();
@@ -66,7 +60,7 @@ namespace ihbiproject.ViewModels
 				}
 				newitem.Place = "";
 
-				System.Diagnostics.Debug.WriteLine ("====>JsonObject" + newitem.ToString ());
+				System.Diagnostics.Debug.WriteLine ("====>JsonObject" + newitem.From);
 				NewsFeedItems.Add (newitem);
 			}
 			System.Diagnostics.Debug.WriteLine ("=====> After Feed Loaded");

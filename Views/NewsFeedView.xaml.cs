@@ -22,12 +22,31 @@ namespace ihbiproject.Views
 			vm.LoadNewsFeed();
         }
 
+		bool a = true;
+		void OnRefresh (object sender, EventArgs e)
+		{
+			var list = (ListView)sender;
+			System.Diagnostics.Debug.WriteLine ("====== in OnRefresh()");
+			if (a) {
+				vm.RefreshFeed ();
+				a = false;
+			} else {
+				vm.RefreshFeed ();
+				a = true;
+			}
+
+//			var itemList = vm.NewsFeedItems;
+//			items.Clear ();
+//			foreach (var s in itemList) {
+//				items.Add (s);
+//			}
+			//make sure to end the refresh state
+
+			list.IsRefreshing = false;
+		}
+
         public NewsFeedView()
         {	
-			System.Diagnostics.Debug.WriteLine ("===>> In News Feed");
-			//DependencyService.Get<IFaceBookFeed> ().getFeed ();
-			System.Diagnostics.Debug.WriteLine ("===>> After DPS");
-			//todo: check order of calls --- story or message, updated_time, id
             InitializeComponent();
             BindingContext = new NewsFeedViewModel();
             vm.LoadNewsFeed();

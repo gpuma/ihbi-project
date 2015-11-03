@@ -43,15 +43,12 @@ namespace ihbiproject.Droid
 		}
 
 		public void getStoredAccount(){
-			System.Diagnostics.Debug.WriteLine ("======>start getStoreAccount");
-
 			var accounts = AccountStore.Create (this).FindAccountsForService ("WellnessFB");
 			var account = accounts.FirstOrDefault();
 
 			if (account != null) {
 				var accessToken = account.Properties ["access_token"].ToString ();
 				App.Instance.SaveToken (accessToken);
-				System.Diagnostics.Debug.WriteLine ("======>WellnessFB account" + account);
 			} else {
 
 			}
