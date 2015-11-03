@@ -8,9 +8,11 @@ namespace ihbiproject.Models
 {
     public class NewsFeedItem
     {
-        public string Title { get; set; }
-        public string Description{ get; set; }
-        public string URL { get; set; }
-        public string Image { get; set; }
+        public string From { get; set; }
+        public string Created_time { get; set; }
+        public string Message { get; set; }
+        public string Picture { get; set; }
+		public string Place { get; set; }
+		public string Story { get; set; }
     }
 }

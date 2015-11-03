@@ -12,9 +12,12 @@
            <ViewCell>
 							<ViewCell.View>
                 <StackLayout Orientation="Vertical" VerticalOptions="FillAndExpand">
-                  <Label Text="{Binding Title}" FontSize="20"/>
-                  <Label Text="{Binding Description}" VerticalOptions="FillAndExpand" FontSize="15" />
-                  <Image Source="{Binding Image}" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Aspect="AspectFill"/>
+                  <Label Text="{Binding From}" FontSize="20"/>
+                  <Label Text="{Binding Created_time}" FontSize="20"/>
+                  <Label Text="{Binding Place}" FontSize="20"/>
+                  <Label Text="{Binding Message}" VerticalOptions="FillAndExpand" FontSize="15" />
+                  <Label Text="{Binding Story}" VerticalOptions="FillAndExpand" FontSize="15" />
+                  <Image Source="{Binding Picture}" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Aspect="AspectFill"/>
               </StackLayout>
             </ViewCell.View>
 							</ViewCell>

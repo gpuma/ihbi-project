@@ -18,6 +18,7 @@ namespace ihbiproject.ViewModels
         {
 			
 			DependencyService.Get<IFaceBookFeed> ().getFeed ();
+
         }
 
 
