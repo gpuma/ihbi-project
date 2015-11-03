@@ -256,3 +256,5 @@ Thumbs.db
 #dotCover
 *.dotCover
 Droid/Resources/Resource.designer.cs
+Components/xamarin.social-1.1.1.info
+Components/xamarin.social-1.1.1.png

@@ -38,6 +38,7 @@
   <ItemGroup>
     <Compile Include="CONST.cs" />
     <Compile Include="Data\db.cs" />
+    <Compile Include="IFBLink.cs" />
     <Compile Include="ihbi-project.cs" />
     <Compile Include="Models\IHBIUser.cs" />
     <Compile Include="Models\NewsFeedItem.cs" />

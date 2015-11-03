@@ -17,7 +17,7 @@ namespace ihbiproject.Views
         public void OnNewsFeedItem_Tapped(object sender, ItemTappedEventArgs e)
         {
             var itemURL = (e.Item as NewsFeedItem).URI;
-            Device.OpenUri(new Uri(itemURL));
+            DependencyService.Get<IFBLink>().OpenFBUri(itemURL);
             System.Diagnostics.Debug.WriteLine("uri for clicked post:", itemURL);
             //deselect item
             lstNewsFeedItems.SelectedItem = null;
