@@ -56,11 +56,13 @@ namespace ihbiproject.ViewModels
 				newitem.From = obj["from"]["name"].ToString();
 				newitem.Created_time = obj["created_time"].ToString();
 				JToken msg;
-				if (obj.TryGetValue ("Message", out msg)) {
+				if (obj.TryGetValue ("message", out msg)) {
 					newitem.Message = obj ["message"].ToString ();
-					newitem.Picture = obj ["picture"].ToString ();
 				} else if (obj.TryGetValue("story", out msg)){
 					newitem.Message = obj ["story"].ToString ();
+				}
+				if (obj.TryGetValue ("picture", out msg)) {
+					newitem.Picture = obj ["picture"].ToString();
 				}
 				newitem.Place = "";
 
