@@ -21,7 +21,7 @@ namespace ihbiproject.Droid
 				return fb (vm);
 			} else {
 				System.Diagnostics.Debug.WriteLine ("=====> In getFeed() and Not Authd");
-				return "plz login";
+				return "{\n  \"feed\": {\n    \"data\": [\n      {\n        \"from\": {\n          \"name\": IHBI Group\",\n          \"id\": \"\"\n        },\n        \"created_time\": \"2015-11-03T02:03:45+0000\",\n        \"story\": \"Please Login\",\n        \"id\": \"\"\n      }\n\t}\n}";
 			}
 
 		}

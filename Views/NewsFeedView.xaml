@@ -21,7 +21,7 @@
                   <Label Text="{Binding From}" FontSize="20"/>
                   <Label Text="{Binding Created_time}" FontSize="20"/>
                   <Label Text="{Binding Message}" VerticalOptions="FillAndExpand" FontSize="15" />
-                  <Image Source="{Binding Picture}" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Aspect="AspectFill"/>
+                  <Image Source="{Binding Picture}" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
               </StackLayout>
             </ViewCell.View>
 							</ViewCell>
