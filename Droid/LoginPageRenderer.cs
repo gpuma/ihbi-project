@@ -40,7 +40,6 @@ namespace ihbiproject.Droid
 						var id = obj ["id"].ToString ().Replace ("\"", "");
 						var name = obj ["name"].ToString ().Replace ("\"","");
 						App.Instance.SuccessfulLoginAction.Invoke();
-						fb(accessToken);
 					} catch (Exception ex) {
 						System.Diagnostics.Debug.WriteLine("========> Error getting from GraphAPI" +ex);
 					}

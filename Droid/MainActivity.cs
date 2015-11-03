@@ -19,23 +19,11 @@ namespace ihbiproject.Droid
 		protected override void OnCreate (Bundle bundle)
 		{
 			base.OnCreate (bundle);
-
-			PackageInfo info = this.PackageManager.GetPackageInfo ("com.ihbi.project", PackageInfoFlags.Signatures);
-
-//			foreach (Android.Content.PM.Signature signature in info.Signatures)
-//			{
-//				MessageDigest md = MessageDigest.GetInstance("SHA");
-//				md.Update(signature.ToByteArray());
-//
-//				string keyhash = Convert.ToBase64String(md.Digest());
-//				Console.WriteLine("KeyHash:"+ keyhash);
-//			}
-
 			global::Xamarin.Forms.Forms.Init (this, bundle);
-
-			//LoadApplication (new App ());
+			getStoredAccount ();
 			SetPage (App.Instance.GetMainPage());
 		}
+			
 
 		protected override void OnStart ()
 		{
@@ -64,11 +52,22 @@ namespace ihbiproject.Droid
 				var accessToken = account.Properties ["access_token"].ToString ();
 				App.Instance.SaveToken (accessToken);
 				System.Diagnostics.Debug.WriteLine ("======>WellnessFB account" + account);
-				//fb(accessToken);
-
 			} else {
 
 			}
+		}
+
+		public void getAndroidKey() {
+			PackageInfo info = this.PackageManager.GetPackageInfo ("com.ihbi.project", PackageInfoFlags.Signatures);
+
+			//			foreach (Android.Content.PM.Signature signature in info.Signatures)
+			//			{
+			//				MessageDigest md = MessageDigest.GetInstance("SHA");
+			//				md.Update(signature.ToByteArray());
+			//
+			//				string keyhash = Convert.ToBase64String(md.Digest());
+			//				Console.WriteLine("KeyHash:"+ keyhash);
+			//			}
 		}
 	}
 }

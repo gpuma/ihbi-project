@@ -1,5 +1,5 @@
 ﻿using System;
-
+using Facebook;
 
 [assembly: Xamarin.Forms.Dependency (typeof (ihbiproject.Droid.FaceBookFeed))]
 namespace ihbiproject.Droid
@@ -8,12 +8,44 @@ namespace ihbiproject.Droid
 	{
 		public FaceBookFeed ()
 		{
-			
+
 		}
 
-		public void getFeed()
+		public string getFeed()
 		{
-			System.Diagnostics.Debug.WriteLine ("====> In FB Feed");
+
+			System.Diagnostics.Debug.WriteLine ("====> In getFeed()");
+			if (App.Instance.IsAuthenticated) {
+				System.Diagnostics.Debug.WriteLine ("=====> In getFeed() and Authd");
+				return fb ();
+			} else {
+				System.Diagnostics.Debug.WriteLine ("=====> In getFeed() and Not Authd");
+				return "plz login";
+			}
+
+		}
+
+		public string fb()
+		{
+			string token = App.Instance.Token;
+			string rValue = "";
+			FacebookClient fb = new FacebookClient (token);
+			fb.GetCompleted += (sender, e) => {
+				System.Diagnostics.Debug.WriteLine("=====>In NewsFeed FB()");
+				var ex = e.Error;
+				if (ex != null){
+					System.Diagnostics.Debug.WriteLine("=====> FB Error");
+				}else{
+					//var t = (String) e.GetResultData();
+
+					//var res = JObject.Parse (t);
+					System.Diagnostics.Debug.WriteLine("====>> NewsFeed FB() Results"+e.GetResultData().ToString());
+					rValue =  e.GetResultData().ToString();
+				}
+
+			};
+			fb.GetTaskAsync ("1698903283671929?fields=feed{from,created_time,message,picture,place,story}");
+			return rValue;
 		}
 	}
 }
