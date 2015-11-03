@@ -20,9 +20,11 @@ namespace ihbiproject.ViewModels
         public void LoadNewsFeed()
         {
 
-			NewsFeedItems = db.GetNewsFeed();
+			//NewsFeedItems = db.GetNewsFeed();
+			NewsFeedItems = new List<NewsFeedItem>();
 
 			String feed = DependencyService.Get<IFaceBookFeed> ().getFeed (this);
+			feedLoaded (feed);
 //			System.Diagnostics.Debug.WriteLine ("======>after DS.getFeed() feed: " + feed);
 //			var feedArray = new JArray (feed);
 //			foreach (var obj in feedArray) 
@@ -41,7 +43,7 @@ namespace ihbiproject.ViewModels
 			//System.Diagnostics.Debug.WriteLine ("feed: " + feedObj.ToString ());
 			var feedArray = feedObj ["data"];
 			//System.Diagnostics.Debug.WriteLine ("=====> feedArray:"+ feedArray);				
-			foreach (var obj in feedArray) 
+			foreach (var obj2 in feedArray) 
 			{
 				NewsFeedItem newitem = new NewsFeedItem ();
 //				newitem.From = obj["from"]["name"].ToString();
@@ -50,13 +52,18 @@ namespace ihbiproject.ViewModels
 //				newitem.Picture = "";
 //				newitem.Place = "";
 //				newitem.Story = obj["story"].ToString();
-				//JObject obj = (JObject) obj2;
+				JObject obj = (JObject) obj2;
 				newitem.From = obj["from"]["name"].ToString();
 				newitem.Created_time = obj["created_time"].ToString();
-				newitem.Message = "";
-				newitem.Picture = "";
-				newitem.Place = "in brisbane";
-				newitem.Story = " a story from my post!";
+				JToken msg;
+				if (obj.TryGetValue ("Message", out msg)) {
+					newitem.Message = obj ["message"].ToString ();
+					newitem.Picture = obj ["picture"].ToString ();
+				} else if (obj.TryGetValue("story", out msg)){
+					newitem.Message = obj ["story"].ToString ();
+				}
+				newitem.Place = "";
+
 				System.Diagnostics.Debug.WriteLine ("====>JsonObject" + newitem.ToString ());
 				NewsFeedItems.Add (newitem);
 			}

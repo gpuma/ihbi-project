@@ -31,20 +31,22 @@ namespace ihbiproject.Droid
 			string token = App.Instance.Token;
 			string rValue = "";
 			FacebookClient fb = new FacebookClient (token);
-			fb.GetCompleted += (sender, e) => {
-				System.Diagnostics.Debug.WriteLine("=====>In NewsFeed FB()");
-				var ex = e.Error;
-				if (ex != null){
-					System.Diagnostics.Debug.WriteLine("=====> FB Error");
-				}else{
-					System.Diagnostics.Debug.WriteLine("====>> NewsFeed FB() Results"+e.GetResultData().ToString());
-					rValue =  e.GetResultData().ToString();
-					vm.feedLoaded(rValue);
-				}
-
-			};
-			fb.GetTaskAsync ("1698903283671929?fields=feed{from,created_time,message,picture,place,story}");
-			return rValue;
+//			fb.GetCompleted += (sender, e) => {
+//				System.Diagnostics.Debug.WriteLine("=====>In NewsFeed FB()");
+//				var ex = e.Error;
+//				if (ex != null){
+//					System.Diagnostics.Debug.WriteLine("=====> FB Error");
+//				}else{
+//					System.Diagnostics.Debug.WriteLine("====>> NewsFeed FB() Results"+e.GetResultData().ToString());
+//					rValue =  e.GetResultData().ToString();
+//					vm.feedLoaded(rValue);
+//				}
+//
+//			};
+			var result =  fb.Get ("1698903283671929?fields=feed{from,created_time,message,picture,place,story}");
+			//vm.feedLoaded (result);
+			System.Diagnostics.Debug.WriteLine("===> R : " + result.ToString());
+			return result.ToString();
 		}
 	}
 }
