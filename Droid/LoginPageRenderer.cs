@@ -31,6 +31,7 @@ namespace ihbiproject.Droid
 					try {
 						var accessToken = eventArgs.Account.Properties ["access_token"].ToString ();
 						App.Instance.SaveToken(accessToken);
+						AccountStore.Create (activity).Save (eventArgs.Account, "WellnessFB");
 						var expiresIn = Convert.ToDouble (eventArgs.Account.Properties ["expires_in"]);
 						var expiryDate = DateTime.Now + TimeSpan.FromSeconds (expiresIn);
 						var request = new OAuth2Request ("GET", new Uri ("https://graph.facebook.com/me"), null, eventArgs.Account);
@@ -76,7 +77,6 @@ namespace ihbiproject.Droid
 
 		public LoginPageRenderer()
 		{
-			System.Diagnostics.Debug.WriteLine ("======>Login Page OAuth");
 		}
 	}
 }
