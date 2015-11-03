@@ -16,7 +16,9 @@ namespace ihbiproject.ViewModels
 
         public void LoadNewsFeed()
         {
-			
+
+			NewsFeedItems = db.GetNewsFeed();
+
 			DependencyService.Get<IFaceBookFeed> ().getFeed ();
 
         }

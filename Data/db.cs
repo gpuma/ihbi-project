@@ -31,12 +31,12 @@ namespace ihbiproject.Data
             //dummy newsfeed
             newsfeeditems = new List<NewsFeedItem>(new NewsFeedItem[]
                 {
-                    new NewsFeedItem() {Title = "Emma Watson", Description = "hey I'm gonna jog this saturday near southbank, any1 want 2 come?", Image ="http://www.cinemablend.com/images/news_img/36323/emma_watson_36323.jpg", URL = "http://www.runningpage.com/" },
-                    new NewsFeedItem() {Title = "Farewell bbq for Eli", Description = "16:00 September 30 at Roma Parklands" },
-                    new NewsFeedItem() {Title = "Girls night out!!", Description = "20:00 September 30 at the Victory" },
-                    new NewsFeedItem() {Title = "Jennifer Firn", Description = "feeling very sad today :((" },
-                    new NewsFeedItem() {Title = "Mary Sue", Description = "Check out my organic, gmo-free, locally harvested alfalfa smoothie recipe on my blog!!!", Image="http://cdn.nutrientrich.com/wp-content/uploads/2013/06/juice2.jpg", URL = "https://sproutpeople.org/sprout-recipes/cat/smoothies/" },
-                    new NewsFeedItem() {Title = "New member added to the fb group", Description = "Yuri is new to the group. Say hi to her ;)" },
+                    new NewsFeedItem() {From = "Emma Watson", Message = "hey I'm gonna jog this saturday near southbank, any1 want 2 come?", Picture ="http://www.cinemablend.com/images/news_img/36323/emma_watson_36323.jpg" },
+                    new NewsFeedItem() {From = "Farewell bbq for Eli", Message = "16:00 September 30 at Roma Parklands" },
+					new NewsFeedItem() {From = "Girls night out!!", Message = "20:00 September 30 at the Victory" },
+					new NewsFeedItem() {From = "Jennifer Firn", Message = "feeling very sad today :((" },
+					new NewsFeedItem() {From = "Mary Sue", Message = "Check out my organic, gmo-free, locally harvested alfalfa smoothie recipe on my blog!!!", Picture="http://cdn.nutrientrich.com/wp-content/uploads/2013/06/juice2.jpg" },
+					new NewsFeedItem() {From = "New member added to the fb group", Story = "Yuri is new to the group. Say hi to her ;)" },
                 });
 
             //mood filenames and description

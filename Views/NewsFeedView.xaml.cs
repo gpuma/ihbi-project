@@ -16,9 +16,9 @@ namespace ihbiproject.Views
 
         public void OnNewsFeedItem_Tapped(object sender, ItemTappedEventArgs e)
         {
-            var itemURL = (e.Item as NewsFeedItem).URL;
-            //might not work on iOS due to '%' character not allowed
-            Device.OpenUri(new Uri(itemURL));
+//            var itemURL = (e.Item as NewsFeedItem).URL;
+//            //might not work on iOS due to '%' character not allowed
+//            Device.OpenUri(new Uri(itemURL));
         }
 
         public NewsFeedView()
