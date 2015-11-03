@@ -14,7 +14,7 @@
         <ColumnDefinition Width="*"/>
       </Grid.ColumnDefinitions>
       <Label x:Name="lblSleep" Text="slept 8 hours" Grid.Row="0" Grid.Column="0"/>
-      <Slider x:Name="sldSleep" Minimum="0" Maximum="16" Value="{Binding sleepHours}"
+      <Slider x:Name="sldSleep" Minimum="0" Maximum="16" Value="{Binding SleepHours}"
               ValueChanged="OnSldSleepValueChanged" Grid.Row="0" Grid.Column="1"/>
       <Label Text="mood" Grid.Row="1" Grid.Column="0"/>
       <Label x:Name="lblMood" Text="{Binding SelectedMood}" Grid.Row="1" Grid.Column="1"/>

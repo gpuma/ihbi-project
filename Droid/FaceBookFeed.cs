@@ -1,5 +1,6 @@
 ﻿using System;
 using Facebook;
+using ihbiproject.ViewModels;
 
 [assembly: Xamarin.Forms.Dependency (typeof (ihbiproject.Droid.FaceBookFeed))]
 namespace ihbiproject.Droid
@@ -11,13 +12,13 @@ namespace ihbiproject.Droid
 
 		}
 
-		public string getFeed()
+		public string getFeed(NewsFeedViewModel vm)
 		{
 
 			System.Diagnostics.Debug.WriteLine ("====> In getFeed()");
 			if (App.Instance.IsAuthenticated) {
 				System.Diagnostics.Debug.WriteLine ("=====> In getFeed() and Authd");
-				return fb ();
+				return fb (vm);
 			} else {
 				System.Diagnostics.Debug.WriteLine ("=====> In getFeed() and Not Authd");
 				return "plz login";
@@ -25,7 +26,7 @@ namespace ihbiproject.Droid
 
 		}
 
-		public string fb()
+		public string fb(NewsFeedViewModel vm)
 		{
 			string token = App.Instance.Token;
 			string rValue = "";
@@ -36,11 +37,9 @@ namespace ihbiproject.Droid
 				if (ex != null){
 					System.Diagnostics.Debug.WriteLine("=====> FB Error");
 				}else{
-					//var t = (String) e.GetResultData();
-
-					//var res = JObject.Parse (t);
 					System.Diagnostics.Debug.WriteLine("====>> NewsFeed FB() Results"+e.GetResultData().ToString());
 					rValue =  e.GetResultData().ToString();
+					vm.feedLoaded(rValue);
 				}
 
 			};

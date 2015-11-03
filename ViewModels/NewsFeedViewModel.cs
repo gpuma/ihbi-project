@@ -7,6 +7,9 @@ using ihbiproject;
 using ihbiproject.Models;
 using ihbiproject.Data;
 using Xamarin.Forms;
+using Newtonsoft.Json.Linq;
+using Newtonsoft.Json;
+
 
 namespace ihbiproject.ViewModels
 {
@@ -19,9 +22,46 @@ namespace ihbiproject.ViewModels
 
 			NewsFeedItems = db.GetNewsFeed();
 
-			DependencyService.Get<IFaceBookFeed> ().getFeed ();
+			String feed = DependencyService.Get<IFaceBookFeed> ().getFeed (this);
+//			System.Diagnostics.Debug.WriteLine ("======>after DS.getFeed() feed: " + feed);
+//			var feedArray = new JArray (feed);
+//			foreach (var obj in feedArray) 
+//			{
+//				System.Diagnostics.Debug.WriteLine ("====>JsonObject" + obj.ToString ());
+//			}
 
         }
+		public void feedLoaded(string feed) 
+		{
+			
+			System.Diagnostics.Debug.WriteLine ("====> in feed Loaded");
+			var topObj = JObject.Parse (feed);
+			//System.Diagnostics.Debug.WriteLine ("topObj: " + topObj.ToString ());
+			var feedObj = topObj["feed"];
+			//System.Diagnostics.Debug.WriteLine ("feed: " + feedObj.ToString ());
+			var feedArray = feedObj ["data"];
+			//System.Diagnostics.Debug.WriteLine ("=====> feedArray:"+ feedArray);				
+			foreach (var obj in feedArray) 
+			{
+				NewsFeedItem newitem = new NewsFeedItem ();
+//				newitem.From = obj["from"]["name"].ToString();
+//				newitem.Created_time = obj["created_time"].ToString();
+//				newitem.Message = obj["message"].ToString();
+//				newitem.Picture = "";
+//				newitem.Place = "";
+//				newitem.Story = obj["story"].ToString();
+				//JObject obj = (JObject) obj2;
+				newitem.From = obj["from"]["name"].ToString();
+				newitem.Created_time = obj["created_time"].ToString();
+				newitem.Message = "";
+				newitem.Picture = "";
+				newitem.Place = "in brisbane";
+				newitem.Story = " a story from my post!";
+				System.Diagnostics.Debug.WriteLine ("====>JsonObject" + newitem.ToString ());
+				NewsFeedItems.Add (newitem);
+			}
+			System.Diagnostics.Debug.WriteLine ("=====> After Feed Loaded");
+		}
 
 
     }

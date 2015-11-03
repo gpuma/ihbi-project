@@ -19,12 +19,13 @@ namespace ihbiproject.Views
 //            var itemURL = (e.Item as NewsFeedItem).URL;
 //            //might not work on iOS due to '%' character not allowed
 //            Device.OpenUri(new Uri(itemURL));
+			vm.LoadNewsFeed();
         }
 
         public NewsFeedView()
         {	
 			System.Diagnostics.Debug.WriteLine ("===>> In News Feed");
-			DependencyService.Get<IFaceBookFeed> ().getFeed ();
+			//DependencyService.Get<IFaceBookFeed> ().getFeed ();
 			System.Diagnostics.Debug.WriteLine ("===>> After DPS");
 			//todo: check order of calls --- story or message, updated_time, id
             InitializeComponent();
