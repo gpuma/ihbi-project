@@ -23,6 +23,8 @@ namespace ihbiproject.ViewModels
 			NewsFeedItems = new ObservableCollection<NewsFeedItem>();
 			String feed = DependencyService.Get<IFaceBookFeed> ().getFeed (this);
 			feedLoaded (feed);
+			//LoginViewModel LVM = new LoginViewModel ();
+			//LVM.createUser ();
         }
 
 		public void RefreshFeed() {

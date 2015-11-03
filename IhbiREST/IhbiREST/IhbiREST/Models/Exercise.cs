@@ -14,7 +14,7 @@ namespace IhbiREST.Models
     
     public partial class Exercise
     {
-        public int Id { get; set; }
+        public int? Id { get; set; }
         public Nullable<int> user_id { get; set; }
         public Nullable<int> stretching { get; set; }
         public Nullable<int> pelvic { get; set; }

@@ -151,6 +151,8 @@
       <DependentUpon>IhbiModel.edmx</DependentUpon>
       <LastGenOutput>IhbiModel.cs</LastGenOutput>
     </Content>
+    <None Include="Properties\PublishProfiles\ihbiproject - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\ihbiproject - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\ihbiproject.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
