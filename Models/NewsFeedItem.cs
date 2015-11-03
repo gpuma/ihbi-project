@@ -14,5 +14,6 @@ namespace ihbiproject.Models
         public string Picture { get; set; }
 		public string Place { get; set; }
 		public string Story { get; set; }
+        public string URI { get; set; }
     }
 }
