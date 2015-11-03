@@ -26,7 +26,7 @@ namespace ihbiproject.Views
 			System.Diagnostics.Debug.WriteLine ("===>> In News Feed");
 			DependencyService.Get<IFaceBookFeed> ().getFeed ();
 			System.Diagnostics.Debug.WriteLine ("===>> After DPS");
-            //todo: check order of calls
+			//todo: check order of calls --- story or message, updated_time, id
             InitializeComponent();
             BindingContext = new NewsFeedViewModel();
             vm.LoadNewsFeed();

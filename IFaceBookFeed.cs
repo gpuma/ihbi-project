@@ -4,7 +4,7 @@ namespace ihbiproject
 {
 	public interface IFaceBookFeed
 	{
-		void getFeed();
+		string getFeed();
 	}
 }
 

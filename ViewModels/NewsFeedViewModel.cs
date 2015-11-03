@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using ihbiproject;
 using ihbiproject.Models;
 using ihbiproject.Data;
+using Xamarin.Forms;
 
 namespace ihbiproject.ViewModels
 {
@@ -15,7 +16,10 @@ namespace ihbiproject.ViewModels
 
         public void LoadNewsFeed()
         {
-            NewsFeedItems = db.GetNewsFeed();
+			
+			DependencyService.Get<IFaceBookFeed> ().getFeed ();
         }
+
+
     }
 }
