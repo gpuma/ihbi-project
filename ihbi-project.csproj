@@ -55,7 +55,6 @@
     <Compile Include="Views\NewsFeedView.xaml.cs">
       <DependentUpon>NewsFeedView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\EventView.cs" />
     <Compile Include="Views\NotificationView.cs" />
     <Compile Include="Views\ScheduleView.cs" />
     <Compile Include="Views\DailyCheckinView.xaml.cs">
@@ -72,6 +71,9 @@
     <Compile Include="Views\LoginPage.cs" />
     <Compile Include="OAuthSettings.cs" />
     <Compile Include="IFaceBookFeed.cs" />
+    <Compile Include="Views\EventView.xaml.cs">
+      <DependentUpon>EventView.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Import Project="packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets" Condition="Exists('packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" />
@@ -88,6 +90,9 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\ExerciseView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\EventView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>

@@ -44,7 +44,11 @@ namespace ihbiproject.iOS
 				}
 
 			};
+
 			fb.GetTaskAsync ("1698903283671929?fields=feed{from,created_time,message,picture,place,story}");
+
+			//for group events
+			//fb.GetTaskAsync ("1698903283671929?fields=events{name,owner,start_time,end_time,description}");
 			return rValue;
 		}
 

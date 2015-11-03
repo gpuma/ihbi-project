@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+			 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+			 x:Class="ihbiproject.EventView">
+	<StackLayout>
+		<ScrollView Orientation = "Vertical" VerticalOptions = "FillAndExpand">
+			<ListView x:Name = "lstEventItems" HasUnevenRows = "true">
+				<DataTemplate>
+					<ViewCell>
+						<ViewCell.View>
+						    <StackLayout Orientation="Vertical" VerticalOptions="FillAndExpand">
+              			   	   <Label Text="{Binding From}" FontSize="20"/>
+            			       <Label Text="{Binding Created_time}" FontSize="20"/>
+                			   <Label Text="{Binding Place}" FontSize="20"/>
+             			       <Label Text="{Binding Message}" VerticalOptions="FillAndExpand" FontSize="15" />
+             			       <Label Text="{Binding Story}" VerticalOptions="FillAndExpand" FontSize="15" />
+            			       <Image Source="{Binding Picture}" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Aspect="AspectFill"/>
+             			    </StackLayout>
+						</ViewCell.View>
+					</ViewCell>
+				</DataTemplate>
+			</ListView>
+		</ScrollView>
+	</StackLayout>
+</ContentPage>
