@@ -30,7 +30,10 @@ namespace ihbiproject.iOS
 
 			window.MakeKeyAndVisible ();
 
-			return true;
+            //for maps support
+            Xamarin.FormsMaps.Init();
+
+            return true;
 		}
 
 
