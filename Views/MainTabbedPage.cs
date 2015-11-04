@@ -15,6 +15,8 @@ namespace ihbiproject
 			this.Children.Add (new ScheduleView () { Title = "Schedule", Icon = "calendar.png" });
 			this.Children.Add (new EventView () { Title = "Event", Icon = "event.png" });
 			this.Children.Add (new NotificationView () { Title = "Notification", Icon = "notification.png" });
+            //todo: add icon
+			this.Children.Add (new MapView () { Title = "Map"});
 
             this.ItemTemplate = new DataTemplate (() => { 
 				return new MenuPage (); 

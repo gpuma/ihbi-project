@@ -20,7 +20,9 @@ namespace ihbiproject.Droid
 		{
 			base.OnCreate (bundle);
 			global::Xamarin.Forms.Forms.Init (this, bundle);
-			getStoredAccount ();
+            //for maps support
+            Xamarin.FormsMaps.Init(this, bundle);
+            getStoredAccount ();
 			SetPage (App.Instance.GetMainPage());
 		}
 			
