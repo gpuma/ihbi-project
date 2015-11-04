@@ -26,6 +26,8 @@ namespace ihbiproject.iOS
 
 			window.RootViewController = App.Instance.GetMainPage().CreateViewController ();
 
+			UINavigationBar.Appearance.BarTintColor = UIColor.FromRGB (252, 224, 223);
+
 			window.MakeKeyAndVisible ();
 
 			return true;

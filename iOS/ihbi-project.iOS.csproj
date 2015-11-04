@@ -107,7 +107,6 @@
     <None Include="packages.config" />
     <Compile Include="LoginPageRenderer.cs" />
     <Compile Include="FaceBookFeed.cs" />
-    <Compile Include="TabbedPageRenderer.cs" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="RootViewController.designer.cs">
