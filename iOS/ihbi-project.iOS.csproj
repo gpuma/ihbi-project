@@ -154,6 +154,9 @@
     <Reference Include="Xamarin.Forms.Maps.iOS, Version=1.5.0.0, Culture=neutral, PublicKeyToken=null">
       <HintPath>..\packages\Xamarin.Forms.Maps.1.5.1.6471\lib\Xamarin.iOS10\Xamarin.Forms.Maps.iOS.dll</HintPath>
     </Reference>
+    <Reference Include="Rivets">
+      <HintPath>..\Components\rivets-1.0.5.1\lib\ios-unified\Rivets.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="bottom.png" />
@@ -258,6 +261,10 @@
     </XamarinComponentReference>
     <XamarinComponentReference Include="facebook-sdk">
       <Version>6.2.2</Version>
+      <Visible>False</Visible>
+    </XamarinComponentReference>
+    <XamarinComponentReference Include="rivets">
+      <Version>1.0.5.1</Version>
       <Visible>False</Visible>
     </XamarinComponentReference>
   </ItemGroup>
