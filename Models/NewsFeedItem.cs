@@ -12,8 +12,9 @@ namespace ihbiproject.Models
         public string Created_time { get; set; }
         public string Message { get; set; }
         public string Picture { get; set; }
-		public string Place { get; set; }
-		public string Story { get; set; }
-        public string URI { get; set; }
+        public string Place { get; set; }
+        public string Story { get; set; }
+        public string FbURI { get; set; }
+        public string WebURI { get; set; }
     }
 }

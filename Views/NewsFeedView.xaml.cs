@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,9 +17,18 @@ namespace ihbiproject.Views
 
         public void OnNewsFeedItem_Tapped(object sender, ItemTappedEventArgs e)
         {
-            var itemURL = (e.Item as NewsFeedItem).URI;
-            DependencyService.Get<IFBLink>().OpenFBUri(itemURL);
-            System.Diagnostics.Debug.WriteLine("uri for clicked post:", itemURL);
+            var item = (e.Item as NewsFeedItem);
+            try
+            {
+                DependencyService.Get<IFBLink>().OpenFBUri(item.FbURI);
+            }
+            catch(Exception err)
+            {
+                Debug.WriteLine("error opening facebook app, trying web browser!");
+                Debug.WriteLine(err.Message);
+                Device.OpenUri(new Uri(item.WebURI));
+            }
+            //Debug.WriteLine("uri for clicked post:", itemURL);
             //deselect item
             lstNewsFeedItems.SelectedItem = null;
         }

@@ -39,7 +39,7 @@ namespace ihbiproject.ViewModels
 		}
 
 
-        // gets the URI for use in a web browser, unused
+        // gets the URI for use in a web browser
         public string getWebURIfromGraphId(string id)
         {
             //1698903283671929_1723329197896004
@@ -79,7 +79,8 @@ namespace ihbiproject.ViewModels
 				}
                 if (obj.TryGetValue("id", out msg))
                 {
-                    newitem.URI = getURIfromGraphId(obj["id"].ToString());
+                    newitem.FbURI = getURIfromGraphId(obj["id"].ToString());
+                    newitem.WebURI = getWebURIfromGraphId(obj["id"].ToString());
                 }
                 newitem.Place = "";
 
