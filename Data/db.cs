@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Xamarin.Forms.Maps;
 using ihbiproject.Models;
 
 namespace ihbiproject.Data
@@ -18,6 +19,7 @@ namespace ihbiproject.Data
         static List<IHBIUser> users;
         static List<NewsFeedItem> newsfeeditems;
         public static Dictionary<string, string> Moods { get; set; }
+        public static Pin[] testLocations;
         public static void InsertDummyData()
         {
             //dummy users
@@ -50,6 +52,14 @@ namespace ihbiproject.Data
             Moods.Add("mood_07.png", "uncomfortable");
             Moods.Add("mood_08.png", "sad");
             Moods.Add("mood_09.png", "very sad");
+
+            //dummy locations for map
+            testLocations = new Pin[] {
+                new Pin { Type = PinType.SavedPin, Position = new Position(-27.480031, 153.024679), Label = "Julia" } ,
+                new Pin { Type = PinType.SavedPin, Position = new Position(-27.474836, 153.027249), Label = "Roberta" } ,
+                new Pin { Type = PinType.SavedPin, Position = new Position(-27.478964, 153.024110), Label = "Patricia" } ,
+                new Pin { Type = PinType.SavedPin, Position = new Position(-27.475640, 153.031359), Label = "Francisca" } ,
+            };
         }
         public static IHBIUser GetUser(string username, string password)
         {
