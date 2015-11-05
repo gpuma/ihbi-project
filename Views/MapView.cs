@@ -67,9 +67,10 @@ namespace ihbiproject.Views
             await DisplayAlert("", (sender as Pin).Label, "Ok");
         }
 
-        protected override void OnAppearing()
+        public void LoadMapEvents()
         {
-            DisplayAlert("", "OnAppearing called", "ok");
+            db.GetFbEvents();
+            DisplayAlert("", "maps loaded jk", "ok boss");
         }
     }
 }

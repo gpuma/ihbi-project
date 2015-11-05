@@ -12,12 +12,15 @@ namespace ihbiproject
 		public MainTabbedPage ()
 		{
 			this.Title = "Younger Women Wellness";
+            MapView mapPage = new MapView() { Title = "Map", Icon = "map_icon.png" };
+            mapPage.Appearing += MapPage_Appearing;
 
-			this.Children.Add (new NewsFeedView () { Title = "News Feed", Icon = "new_icon.png" });
+
+            this.Children.Add (new NewsFeedView () { Title = "News Feed", Icon = "new_icon.png" });
 			this.Children.Add (new DailyCheckinView () { Title = "Daily Checkin", Icon = "dailycheckin.png" });
 			this.Children.Add (new ScheduleView () { Title = "Schedule", Icon = "calendar.png" });
 			this.Children.Add (new EventView () { Title = "Event", Icon = "event.png" });
-			this.Children.Add (new MapView () { Title = "Map", Icon = "map_icon.png" });
+			this.Children.Add (mapPage);
             //todo: add icon
 
             this.ItemTemplate = new DataTemplate (() => { 
@@ -25,7 +28,12 @@ namespace ihbiproject
 			});
 		}
 
-		protected override void OnAppearing ()
+        private void MapPage_Appearing(object sender, EventArgs e)
+        {
+            (sender as MapView).LoadMapEvents();
+        }
+
+        protected override void OnAppearing ()
 		{
 			base.OnAppearing ();
 			System.Diagnostics.Debug.WriteLine ("====> in Base Content" + App.Instance.IsAuthenticated);

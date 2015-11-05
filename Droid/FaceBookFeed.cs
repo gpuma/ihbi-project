@@ -29,7 +29,7 @@ namespace ihbiproject.Droid
 			string token = App.Instance.Token;
 			FacebookClient fb = new FacebookClient (token);
             var query = "1698903283671929?fields=feed{from,created_time,message,picture,place,story}";
-            if (eventsOnly) query += "/events";
+            if (eventsOnly) query = "1698903283671929/events";
             var result =  fb.Get (query);
 			System.Diagnostics.Debug.WriteLine("===> R : " + result.ToString());
 			return result.ToString();
