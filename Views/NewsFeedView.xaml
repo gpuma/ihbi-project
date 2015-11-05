@@ -17,7 +17,7 @@
           <DataTemplate>
            <ViewCell>
 							<ViewCell.View>
-                <StackLayout Orientation = "Vertical">
+                <StackLayout Orientation = "Vertical" Padding = "20, 5, 0, 0">
                   <StackLayout Orientation = "Horizontal">
                   <Label Text="{Binding From}" FontSize="15" TextColor = "Navy"  HorizontalOptions = "Start"/>
                   <Label Text="{Binding Created_time}" FontSize="15" HorizontalOptions = "End" />

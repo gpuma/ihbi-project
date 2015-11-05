@@ -7,8 +7,8 @@ using ihbiproject.Views;
 
 namespace ihbiproject.ViewModels
 {
-	public class DailyCheckinViewModel : ContentPage
+	public class DailyCheckinViewModel
 	{
-
+		public DateTime exerciseDate { get; set; }
 	}
 }
