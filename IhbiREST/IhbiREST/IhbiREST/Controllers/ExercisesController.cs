@@ -80,22 +80,7 @@ namespace IhbiREST.Controllers
             }
 
             db.Exercises.Add(exercise);
-
-            try
-            {
-                db.SaveChanges();
-            }
-            catch (DbUpdateException)
-            {
-                if (ExerciseExists(exercise.Id))
-                {
-                    return Conflict();
-                }
-                else
-                {
-                    throw;
-                }
-            }
+            db.SaveChanges();
 
             return CreatedAtRoute("DefaultApi", new { id = exercise.Id }, exercise);
         }
@@ -125,7 +110,7 @@ namespace IhbiREST.Controllers
             base.Dispose(disposing);
         }
 
-        private bool ExerciseExists(int? id)
+        private bool ExerciseExists(int id)
         {
             return db.Exercises.Count(e => e.Id == id) > 0;
         }

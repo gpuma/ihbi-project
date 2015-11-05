@@ -36,10 +36,16 @@ namespace ihbiRestTest
                 testUser.password = "1234";
                 testUser.username = "not Geoff";
 
-                
+                Exercise exer = new Exercise();
+                exer.user_id = 1;
+                exer.stretching = 1;
+                exer.pelvic = 1;
+                exer.minutes = "2";
+                exer.type = "walk";
+                exer.date = DateTime.Now;
 
                 HttpResponseMessage response;
-                response = await client2.PostAsJsonAsync("api/Users", testUser);
+                response = await client2.PostAsJsonAsync("api/Exercises", exer);
                 
                 if (response.IsSuccessStatusCode)
                 {

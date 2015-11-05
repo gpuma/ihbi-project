@@ -14,10 +14,10 @@ namespace IhbiREST.Models
     
     public partial class Welness
     {
-        public int Id { get; set; }
+        public int? Id { get; set; }
         public int user_id { get; set; }
-        public int sleep { get; set; }
-        public int mood { get; set; }
+        public double sleep { get; set; }
+        public string mood { get; set; }
         public System.DateTime date { get; set; }
     }
 }

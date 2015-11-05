@@ -79,5 +79,11 @@ namespace ihbiproject.Views
                 lblMood.Text = vm.SelectedMood;
             }
         }
+
+		protected override void OnDisappearing ()
+		{
+			base.OnDisappearing ();
+			vm.saveWelness ();
+		}
     }
 }

@@ -28,7 +28,7 @@
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="user_id" Type="int" />
           <Property Name="stretching" Type="int" />
           <Property Name="pelvic" Type="int" />
@@ -58,8 +58,8 @@
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="user_id" Type="int" Nullable="false" />
-          <Property Name="sleep" Type="int" Nullable="false" />
-          <Property Name="mood" Type="int" Nullable="false" />
+          <Property Name="sleep" Type="float" Nullable="false" />
+          <Property Name="mood" Type="nvarchar(max)" Nullable="false" />
           <Property Name="date" Type="date" Nullable="false" />
         </EntityType>
         <EntityContainer Name="ihbiprojectDBModelStoreContainer">
@@ -115,8 +115,8 @@
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="user_id" Type="Int32" Nullable="false" />
-          <Property Name="sleep" Type="Int32" Nullable="false" />
-          <Property Name="mood" Type="Int32" Nullable="false" />
+          <Property Name="sleep" Type="Double" Nullable="false" />
+          <Property Name="mood" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
           <Property Name="date" Type="DateTime" Nullable="false" Precision="0" />
         </EntityType>
         <EntityContainer Name="ihbiprojectDBEntities" annotation:LazyLoadingEnabled="true">
@@ -131,12 +131,12 @@
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="user_id" Type="Int32" />
           <Property Name="stretching" Type="Int32" />
           <Property Name="pelvic" Type="Int32" />
-          <Property Name="minutes" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
-          <Property Name="type" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="minutes" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="type" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="date" Type="DateTime" Precision="0" />
         </EntityType>
       </Schema>
