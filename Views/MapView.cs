@@ -13,14 +13,14 @@ namespace ihbiproject.Views
     public class MapView : ContentPage
     {
         //gardens point coordinates
-        //Position startPos = new Position(-27.478033, 153.028755);
-        Position currentPos;
+        Position currentPos = new Position(-27.478033, 153.028755);
+//        Position currentPos;
         Distance startZoom = Distance.FromKilometers(.8);
         Label txtPosition = new Label();
         public MapView()
         {
             var btnLocation = new Button() { Text = "Get location" };
-            UpdateGeoLocation();
+//            UpdateGeoLocation();
             btnLocation.Clicked += BtnLocation_Clicked;
             var map = new Map(MapSpan.FromCenterAndRadius(
                 currentPos, startZoom))

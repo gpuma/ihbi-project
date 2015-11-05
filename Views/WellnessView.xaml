@@ -1,24 +1,30 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="ihbiproject.Views.WellnessView">
+			 x:Class="ihbiproject.Views.WellnessView">
   <Label Text="{Binding MainText}" VerticalOptions="Center" HorizontalOptions="Center" />
   <StackLayout>
     <Grid VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
-      <Grid.RowDefinitions>
-        <RowDefinition Height="*"/>
-        <RowDefinition Height="*"/>
-      </Grid.RowDefinitions>
-      <Grid.ColumnDefinitions>
-        <ColumnDefinition Width="*"/>
-        <ColumnDefinition Width="*"/>
-      </Grid.ColumnDefinitions>
-      <Label x:Name="lblSleep" Text="slept 8 hours" Grid.Row="0" Grid.Column="0"/>
-      <Slider x:Name="sldSleep" Minimum="0" Maximum="16" Value="{Binding SleepHours}"
-              ValueChanged="OnSldSleepValueChanged" Grid.Row="0" Grid.Column="1"/>
-      <Label Text="mood" Grid.Row="1" Grid.Column="0"/>
-      <Label x:Name="lblMood" Text="{Binding SelectedMood}" Grid.Row="1" Grid.Column="1"/>
-    </Grid>
+
+	
+
+		<Grid.RowDefinitions>
+			<RowDefinition Height="*"/>
+			<RowDefinition Height="*"/>
+		</Grid.RowDefinitions>
+
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="*"/>
+			<ColumnDefinition Width="*"/>
+		</Grid.ColumnDefinitions>
+
+		<Label x:Name="lblSleep" Text="slept 8 hours" Grid.Row="0" Grid.Column="0"/>
+		<Slider x:Name="sldSleep" Minimum="0" Maximum="16" Value="{Binding SleepHours}"
+             	ValueChanged="OnSldSleepValueChanged" Grid.Row="0" Grid.Column="1"/>
+		<Label Text="mood" Grid.Row="1" Grid.Column="0"/>
+		<Label x:Name="lblMood" Text="{Binding SelectedMood}" Grid.Row="1" Grid.Column="1"/>
+	</Grid>
+
     <Grid x:Name="grdMoods" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
       <Grid.RowDefinitions>
         <RowDefinition Height="*"/>

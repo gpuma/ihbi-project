@@ -1,40 +1,41 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
-			 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
-			 x:Class="ihbiproject.FoodView">
+			 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+			 xmlns:vms="clr-namespace:ihbiproject;assembly=ihbi-project"
+			 x:Class="ihbiproject.Views.FoodView">
 
-	<StackLayout>
-		<TableView x:Name="foodtable" Intent="Form"> 
+<TableView x:Name="foodtable" Intent="Form"> 
+	<TableView.BindingContext>
+		<vms:ViewModels.FoodViewModel />
+	</TableView.BindingContext>
 
-			<TableRoot> 
-			<TableSection> 
-				<!--how to show placeholders instead of "0" when a page load-->
+	<TableRoot> 
+		<TableSection> 
+		<!--how to show placeholders instead of "0" when a page load-->
 
-				<EntryCell Label="Calcium" 
-			  		 Text="{Binding calcium}" 
-			   		 Placeholder = "Number of serves" 
-			   		 Keyboard = "Numeric" /> 
+			<EntryCell Label="Calcium" 
+		  		 Text="{Binding calcium}" 
+		   		 Placeholder = "Number of serves" 
+		   		 Keyboard = "Numeric" /> 
 
-			   	<EntryCell Label = "Fruit" 
-			  		 Text = "{Binding fruit}" 
-			   		 Placeholder = "Number of pieces" 
-			   		 Keyboard = "Numeric" /> 
+			<EntryCell Label = "Fruit" 
+		  		 Text = "{Binding fruit}" 
+		   		 Placeholder = "Number of pieces" 
+		   		 Keyboard = "Numeric" /> 
 
-			   	<EntryCell Label = "Vegetable" 
-			  		 Text = "{Binding vegetable}" 
-			   		 Placeholder = "Number of serves" 
-			   		 Keyboard = "Numeric" /> 
+		   	<EntryCell Label = "Vegetable" 
+		  		 Text = "{Binding vegetable}" 
+		   		 Placeholder = "Number of serves" 
+		   		 Keyboard = "Numeric" /> 
 
-			   	<EntryCell Label = "Water" 
-			  		 Text = "{Binding water}" 
-			   		 Placeholder = "Number of glasses" 
-			   		 Keyboard = "Numeric" /> 	
+		   	<EntryCell Label = "Water" 
+		 		 Text = "{Binding water}" 
+		  		 Placeholder = "Number of glasses" 
+		  		 Keyboard = "Numeric" /> 	
 
-			</TableSection> 
-			</TableRoot> 
-		</TableView>
-	</StackLayout>
-
+		</TableSection> 
+	</TableRoot> 
+</TableView>
 </ContentPage>
 
 

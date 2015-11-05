@@ -7,7 +7,6 @@ namespace ihbiproject.ViewModels
 {
 	public class ExerciseViewModel : ViewModelBase
 	{
-		double power;
 		string exerciseType;
 		int exerciseMin;
 		bool stretching, pelvic;
@@ -33,11 +32,7 @@ namespace ihbiproject.ViewModels
 			get { return pelvic; } 
 			set { SetProperty (ref pelvic, value); }
 		}
-		public double Power
-		{
-			private set { SetProperty(ref power, value); }
-			get { return power; }
-		}
+
 	}
 
 

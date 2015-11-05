@@ -5,14 +5,13 @@ using Xamarin.Forms;
 using ihbiproject.ViewModels;
 
 
-namespace ihbiproject
+namespace ihbiproject.Views
 {
 	public partial class FoodView : ContentPage
 	{
 		public FoodView ()
 		{
 			InitializeComponent ();
-			BindingContext = new FoodViewModel ();
 		}
 	}
 }
