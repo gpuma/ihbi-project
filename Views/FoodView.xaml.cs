@@ -13,6 +13,14 @@ namespace ihbiproject.Views
 		{
 			InitializeComponent ();
 		}
+
+		protected override void OnDisappearing ()
+		{
+			base.OnDisappearing ();
+			FoodViewModel FVM = (FoodViewModel) foodtable.BindingContext;
+			FVM.saveFood ();
+
+		}
 	}
 }
 
