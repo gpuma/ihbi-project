@@ -43,6 +43,18 @@
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Type" Type="nchar" MaxLength="10" />
         </EntityType>
+        <EntityType Name="Exercise2">
+          <Key>
+            <PropertyRef Name="user_id" />
+            <PropertyRef Name="date" />
+          </Key>
+          <Property Name="user_id" Type="int" Nullable="false" />
+          <Property Name="date" Type="date" Nullable="false" />
+          <Property Name="stretching" Type="int" />
+          <Property Name="pelvic" Type="int" />
+          <Property Name="minutes" Type="int" />
+          <Property Name="type" Type="nvarchar(max)" />
+        </EntityType>
         <EntityType Name="User">
           <Key>
             <PropertyRef Name="Id" />
@@ -67,6 +79,7 @@
           <EntitySet Name="Conusmable_Type" EntityType="Self.Conusmable_Type" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Exercise" EntityType="Self.Exercise" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Exercise_Type" EntityType="Self.Exercise_Type" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Exercise2" EntityType="Self.Exercise2" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Welness" EntityType="Self.Welness" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
@@ -126,6 +139,7 @@
           <EntitySet Name="Users" EntityType="Self.User" />
           <EntitySet Name="Welnesses" EntityType="Self.Welness" />
           <EntitySet Name="Exercises" EntityType="ihbiprojectDBModel.Exercise" />
+          <EntitySet Name="Exercise2" EntityType="ihbiprojectDBModel.Exercise2" />
         </EntityContainer>
         <EntityType Name="Exercise">
           <Key>
@@ -138,6 +152,18 @@
           <Property Name="minutes" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="type" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="date" Type="DateTime" Precision="0" />
+        </EntityType>
+        <EntityType Name="Exercise2">
+          <Key>
+            <PropertyRef Name="user_id" />
+            <PropertyRef Name="date" />
+          </Key>
+          <Property Name="user_id" Type="Int32" Nullable="false" />
+          <Property Name="date" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="stretching" Type="Int32" />
+          <Property Name="pelvic" Type="Int32" />
+          <Property Name="minutes" Type="Int32" />
+          <Property Name="type" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -205,6 +231,18 @@
                 <ScalarProperty Name="stretching" ColumnName="stretching" />
                 <ScalarProperty Name="user_id" ColumnName="user_id" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Exercise2">
+            <EntityTypeMapping TypeName="ihbiprojectDBModel.Exercise2">
+              <MappingFragment StoreEntitySet="Exercise2">
+                <ScalarProperty Name="type" ColumnName="type" />
+                <ScalarProperty Name="minutes" ColumnName="minutes" />
+                <ScalarProperty Name="pelvic" ColumnName="pelvic" />
+                <ScalarProperty Name="stretching" ColumnName="stretching" />
+                <ScalarProperty Name="date" ColumnName="date" />
+                <ScalarProperty Name="user_id" ColumnName="user_id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

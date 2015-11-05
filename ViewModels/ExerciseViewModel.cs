@@ -42,7 +42,7 @@ namespace ihbiproject.ViewModels
 
 		public async void saveExercise() 
 		{
-			Exercise exercise = new Exercise ();
+			Exercise2 exercise = new Exercise2 ();
 
 			exercise.minutes = exerciseMin;
 			if(pelvic) {
@@ -60,7 +60,7 @@ namespace ihbiproject.ViewModels
 			exercise.user_id = 1;
 
 
-			HttpWebRequest request = (HttpWebRequest)HttpWebRequest.Create (new Uri ("http://ihbiproject.azurewebsites.net/api/Exercises"));
+			HttpWebRequest request = (HttpWebRequest)HttpWebRequest.Create (new Uri ("http://ihbiproject.azurewebsites.net/api/Exercise2"));
 			request.ContentType = "application/json";
 			request.Method = "POST";
 			using (Stream sendStream = await request.GetRequestStreamAsync ()) 
@@ -83,7 +83,7 @@ namespace ihbiproject.ViewModels
 						using (StreamReader reader = new StreamReader (stream)) {
 							//String result = reader.ReadToEnd ();
 							JsonSerializer serializer = new JsonSerializer ();
-							Exercise result = (Exercise)serializer.Deserialize (reader, typeof(Exercise));
+							Exercise2 result = (Exercise2)serializer.Deserialize (reader, typeof(Exercise2));
 							System.Diagnostics.Debug.WriteLine ("===> Users: " + result.ToString ());
 						}
 

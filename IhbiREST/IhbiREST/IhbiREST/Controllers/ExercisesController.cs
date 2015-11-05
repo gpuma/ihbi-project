@@ -35,6 +35,27 @@ namespace IhbiREST.Controllers
             return Ok(exercise);
         }
 
+        //GET api/Exercise/
+        //
+        [Route("api/Exercises/{user_id}/{date}")]
+        [HttpGet]
+        public IHttpActionResult GetLastExercise(String user_id, String date)
+        {
+            
+            var dateT = DateTime.Parse(date);
+            var id = int.Parse(user_id);
+            var exercise = (from e in db.Exercises
+                            where (e.user_id == id) && (e.date == dateT)
+                            orderby e.Id descending
+                            select e).FirstOrDefault();
+            if (exercise == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(exercise);
+
+        }
         // PUT: api/Exercises/5
         [ResponseType(typeof(void))]
         public IHttpActionResult PutExercise(int id, Exercise exercise)

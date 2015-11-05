@@ -90,6 +90,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\ConsumablesController.cs" />
     <Compile Include="Controllers\Conusmable_TypeController.cs" />
+    <Compile Include="Controllers\Exercise2Controller.cs" />
     <Compile Include="Controllers\ExercisesController.cs" />
     <Compile Include="Controllers\Exercise_TypeController.cs" />
     <Compile Include="Controllers\UsersController.cs" />
@@ -104,6 +105,9 @@
       <DependentUpon>IhbiModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Exercise.cs">
+      <DependentUpon>IhbiModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Exercise2.cs">
       <DependentUpon>IhbiModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Exercise_Type.cs">

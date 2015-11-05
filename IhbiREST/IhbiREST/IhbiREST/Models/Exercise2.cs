@@ -12,12 +12,13 @@ namespace IhbiREST.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class Welness
+    public partial class Exercise2
     {
-        public int Id { get; set; }
         public int user_id { get; set; }
-        public double sleep { get; set; }
-        public string mood { get; set; }
         public System.DateTime date { get; set; }
+        public Nullable<int> stretching { get; set; }
+        public Nullable<int> pelvic { get; set; }
+        public Nullable<int> minutes { get; set; }
+        public string type { get; set; }
     }
 }

@@ -31,5 +31,6 @@ namespace IhbiREST.Models
         public virtual DbSet<User> Users { get; set; }
         public virtual DbSet<Welness> Welnesses { get; set; }
         public virtual DbSet<Exercise> Exercises { get; set; }
+        public virtual DbSet<Exercise2> Exercise2 { get; set; }
     }
 }
