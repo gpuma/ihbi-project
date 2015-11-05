@@ -109,6 +109,7 @@
     <Compile Include="LoginPageRenderer.cs" />
     <Compile Include="FaceBookFeed.cs" />
     <Compile Include="FBLink_iOS.cs" />
+    <None Include="PluginsHelp\GeolocatorReadme.txt" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="RootViewController.designer.cs">
@@ -158,10 +159,10 @@
       <HintPath>..\Components\rivets-1.0.5.1\lib\ios-unified\Rivets.dll</HintPath>
     </Reference>
     <Reference Include="Geolocator.Plugin">
-      <HintPath>..\packages\Xam.Plugin.Geolocator.1.1.1\lib\Xamarin.iOS10\Geolocator.Plugin.dll</HintPath>
+      <HintPath>..\packages\Xam.Plugin.Geolocator.1.1.0\lib\Xamarin.iOS10\Geolocator.Plugin.dll</HintPath>
     </Reference>
     <Reference Include="Geolocator.Plugin.Abstractions">
-      <HintPath>..\packages\Xam.Plugin.Geolocator.1.1.1\lib\Xamarin.iOS10\Geolocator.Plugin.Abstractions.dll</HintPath>
+      <HintPath>..\packages\Xam.Plugin.Geolocator.1.1.0\lib\Xamarin.iOS10\Geolocator.Plugin.Abstractions.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -179,7 +180,6 @@
     <BundleResource Include="Resources\mood_07.png" />
     <BundleResource Include="Resources\mood_08.png" />
     <BundleResource Include="Resources\mood_09.png" />
-    <Content Include="PluginsHelp\GeolocatorReadme.txt" />
     <ImageAsset Include="Resources\Images.xcassets\LaunchImage.launchimage\Default-568h%402x.png">
       <InProject>false</InProject>
     </ImageAsset>

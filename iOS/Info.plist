@@ -40,6 +40,16 @@
 				<string>fb621549137987350</string>
 			</array>
 		</dict>
+		<dict>
+			<key>CFBundleURLName</key>
+			<string>fb://post/</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>facebook</string>
+			</array>
+			<key>CFBundleURLTypes</key>
+			<string>Viewer</string>
+		</dict>
 	</array>
 	<key>FacebookAppID</key>
 	<string>621549137987350</string>

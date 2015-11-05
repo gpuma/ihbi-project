@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Text;
 using Rivets;
 using ihbiproject;
+using Xamarin.Forms.Platform.iOS;
+
 
 [assembly: Xamarin.Forms.Dependency(typeof(ihbiproject.iOS.FBLink_iOS))]
 namespace ihbiproject.iOS
@@ -11,6 +13,7 @@ namespace ihbiproject.iOS
     {
         public void OpenFBUri(string URI)
         {
+			
             //NSURL* url = [NSURL URLWithString: @"fb://profile/<id>"];
             //[[UIApplication sharedApplication] openURL:url];
 			System.Diagnostics.Debug.WriteLine ("======>before applinks");
