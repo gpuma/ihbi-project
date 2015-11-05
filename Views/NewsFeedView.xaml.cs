@@ -37,7 +37,6 @@ namespace ihbiproject.Views
 		void OnRefresh (object sender, EventArgs e)
 		{
 			var list = (ListView)sender;
-			System.Diagnostics.Debug.WriteLine ("====== in OnRefresh()");
 			if (a) {
 				vm.RefreshFeed ();
 				a = false;
@@ -46,11 +45,6 @@ namespace ihbiproject.Views
 				a = true;
 			}
 
-//			var itemList = vm.NewsFeedItems;
-//			items.Clear ();
-//			foreach (var s in itemList) {
-//				items.Add (s);
-//			}
 			//make sure to end the refresh state
 
 			list.IsRefreshing = false;

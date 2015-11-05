@@ -13,5 +13,12 @@ namespace ihbiproject.Models
 		public string email { get; set; }
 		public string password { get; set; }
         public string username { get; set; }
+
+		public override String ToString()
+		{
+			return ("Name: " + username + " retrieved from server");
+		}
     }
+
+
 }

@@ -24,6 +24,7 @@ namespace ihbiproject.Droid
             Xamarin.FormsMaps.Init(this, bundle);
             getStoredAccount ();
 			SetPage (App.Instance.GetMainPage());
+			getAndroidKey ();
 		}
 			
 
@@ -59,14 +60,16 @@ namespace ihbiproject.Droid
 		public void getAndroidKey() {
 			PackageInfo info = this.PackageManager.GetPackageInfo ("com.ihbi.project", PackageInfoFlags.Signatures);
 
-			//			foreach (Android.Content.PM.Signature signature in info.Signatures)
-			//			{
-			//				MessageDigest md = MessageDigest.GetInstance("SHA");
-			//				md.Update(signature.ToByteArray());
-			//
-			//				string keyhash = Convert.ToBase64String(md.Digest());
-			//				Console.WriteLine("KeyHash:"+ keyhash);
-			//			}
+						foreach (Android.Content.PM.Signature signature in info.Signatures)
+						{
+							//System.Diagnostics.Debug.WriteLine("Sig: "+ signature.ToString ());
+							MessageDigest md = MessageDigest.GetInstance("SHA");
+
+							md.Update(signature.ToByteArray());
+			
+							string keyhash = Convert.ToBase64String(md.Digest());
+							System.Diagnostics.Debug.WriteLine("KeyHash:"+ keyhash);
+						}
 		}
 	}
 }

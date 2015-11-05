@@ -50,21 +50,37 @@ namespace ihbiproject.ViewModels
 //			}
 //		}
 
+
+
 		public async void createUser() 
 		{
+			RestUser rUser = new RestUser();
+			rUser.email = "b@b.com";
+			rUser.password = "my password";
+			rUser.username = "fromXam";
 			HttpWebRequest request = (HttpWebRequest)HttpWebRequest.Create (new Uri ("http://ihbiproject.azurewebsites.net/api/Users"));
 			request.ContentType = "application/json";
-			request.Method = "GET";
+			request.Method = "POST";
+			using (Stream sendStream = await request.GetRequestStreamAsync ()) 
+			{
+				using (StreamWriter sw = new StreamWriter (sendStream)) 
+				{
+					JsonSerializer jsOut = new JsonSerializer ();
+					jsOut.NullValueHandling = NullValueHandling.Ignore;
+					jsOut.Serialize (sw, rUser);
+				}
+			}
+
 			using (WebResponse response = await request.GetResponseAsync())
 			{
 				using (Stream stream = response.GetResponseStream()) 
 				{
 					
 					using (StreamReader reader = new StreamReader(stream)){
-						String result = reader.ReadToEnd ();
-//						JsonSerializer serializer = new JsonSerializer ();
-//						String result = (String)serializer.Deserialize (reader, typeof(String));
-						System.Diagnostics.Debug.WriteLine ("===> Users: " + result);
+						//String result = reader.ReadToEnd ();
+						JsonSerializer serializer = new JsonSerializer ();
+						RestUser result = (RestUser)serializer.Deserialize (reader, typeof(RestUser));
+						System.Diagnostics.Debug.WriteLine ("===> Users: " + result.ToString());
 					}
 						
 				}

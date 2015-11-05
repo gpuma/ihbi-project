@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="1" android:versionName="1.0" package="com.ihbi.project" android:installLocation="auto">
 	<uses-sdk android:minSdkVersion="15" android:targetSdkVersion="23" />
 	<application android:label="ihbi-project">
-		<meta-data android:name="com.google.android.geo.API_KEY" android:value="AIzaSyAGPbhZTXzjiyUw5Ghh_4JbhT1wbSS1KC4" />
+		<meta-data android:name="com.google.android.geo.API_KEY" android:value=" " />
 		<meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version" />
 	</application>
 	<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
