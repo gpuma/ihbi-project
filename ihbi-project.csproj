@@ -41,6 +41,7 @@
     <Compile Include="IFBLink.cs" />
     <Compile Include="ihbi-project.cs" />
     <Compile Include="Models\IHBIUser.cs" />
+    <Compile Include="Models\MapEvent.cs" />
     <Compile Include="Models\NewsFeedItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\LoginViewModel.cs" />

@@ -28,6 +28,7 @@ namespace ihbiproject
 			});
 		}
 
+        //anytime Map tab is clicked we load the fb events to display
         private void MapPage_Appearing(object sender, EventArgs e)
         {
             (sender as MapView).LoadMapEvents();

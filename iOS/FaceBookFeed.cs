@@ -41,7 +41,7 @@ namespace ihbiproject.iOS
             //
             //			};
             var query = "1698903283671929?fields=feed{from,created_time,message,picture,place,story}";
-            if (eventsOnly) query += "/events";
+            if (eventsOnly) query = "1698903283671929/events";
             var result =  fb.Get (query);
 			//vm.feedLoaded (result);
 			System.Diagnostics.Debug.WriteLine("===> R : " + result.ToString());

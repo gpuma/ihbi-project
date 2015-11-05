@@ -18,12 +18,22 @@ namespace ihbiproject.Droid
     {
         public FBLink_Droid() { }
 
-        public void OpenFBUri(string URI)
+        public void OpenFBUri(string fbURI, string webURI)
         {
-            var intent = new Intent(Intent.ActionView, Uri.Parse(URI));
+            var intent = new Intent(Intent.ActionView, Uri.Parse(fbURI));
+            var intent2 = new Intent(Intent.ActionView, Uri.Parse(webURI));
             //adding flag messes with some stack but no time for anything else
             intent.AddFlags(ActivityFlags.NewTask);
-            Application.Context.StartActivity(intent);
+            intent2.AddFlags(ActivityFlags.NewTask);
+            try
+            {
+                Application.Context.StartActivity(intent);
+            }
+            catch(Exception)
+            {
+                System.Diagnostics.Debug.WriteLine("error opening fb app on android. trying browser");
+                Application.Context.StartActivity(intent2);
+            }
         }
     }
 }
