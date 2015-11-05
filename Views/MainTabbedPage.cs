@@ -11,7 +11,7 @@ namespace ihbiproject
 	{
 		public MainTabbedPage ()
 		{
-			this.Title = "Younger Women Wellness";
+			this.Title = "Younger Women's Wellness";
             MapView mapPage = new MapView() { Title = "Map", Icon = "map_icon.png" };
             mapPage.Appearing += MapPage_Appearing;
 
