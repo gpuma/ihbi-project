@@ -58,7 +58,7 @@ namespace ihbiproject.ViewModels
         public void feedLoaded(string feed) 
 		{
 			
-			System.Diagnostics.Debug.WriteLine ("====> in feed Loaded");
+			//System.Diagnostics.Debug.WriteLine ("====> in feed Loaded");
 			var topObj = JObject.Parse (feed);
 			var feedObj = topObj["feed"];
 			var feedArray = feedObj ["data"];
@@ -84,10 +84,10 @@ namespace ihbiproject.ViewModels
                 }
                 newitem.Place = "";
 
-				System.Diagnostics.Debug.WriteLine ("====>JsonObject" + newitem.From);
+				//System.Diagnostics.Debug.WriteLine ("====>JsonObject" + newitem.From);
 				NewsFeedItems.Add (newitem);
 			}
-			System.Diagnostics.Debug.WriteLine ("=====> After Feed Loaded");
+			//System.Diagnostics.Debug.WriteLine ("=====> After Feed Loaded");
 		}
 
 

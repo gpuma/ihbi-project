@@ -1,15 +1,23 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
 			 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
-			 x:Class="ihbiproject.ExerciseView">
+			 xmlns:vms="clr-namespace:ihbiproject;assembly=ihbi-project"
+			 x:Class="ihbiproject.Views.ExerciseView">
+
+
+
 	<TableView Intent="Form">
-    <TableRoot>
-    	<TableSection>
-      			<EntryCell Label ="Type of exercise" Text="{Binding exerciseType}" Keyboard = "Text" />
-    			<EntryCell Label="Minutes Exercised" Text="{Binding exerciseMin}" Keyboard = "Numeric"/>
-      			<SwitchCell Text="Stretching"  IsEnabled = "{Binding stretching}"/>
-      			<SwitchCell Text="Pelvic floor exercise" IsEnabled = "{Binding pelvic}" />
-      	</TableSection>
-    </TableRoot>
-</TableView>
+		<TableView.BindingContext>
+			<vms:ViewModels.ExerciseViewModel />
+		</TableView.BindingContext>
+		    <TableRoot>
+		    	<TableSection>
+		      			<EntryCell Label ="Type of exercise" Text="{Binding ExerciseType}" Keyboard = "Text" />
+		    			<EntryCell Label="Minutes Exercised" Text="{Binding ExerciseMin}" Keyboard = "Numeric"/>
+		      			<SwitchCell Text="Stretching"  IsEnabled = "{Binding Stretching}"/>
+		      			<SwitchCell Text="Pelvic floor exercise" IsEnabled = "{Binding Pelvic}" />
+		      	</TableSection>
+		    </TableRoot>
+		</TableView>
+
 </ContentPage>
