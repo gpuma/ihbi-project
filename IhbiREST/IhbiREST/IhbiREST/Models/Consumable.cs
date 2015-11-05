@@ -14,7 +14,7 @@ namespace IhbiREST.Models
     
     public partial class Consumable
     {
-        public int Id { get; set; }
+        public int? Id { get; set; }
         public int user_id { get; set; }
         public int type { get; set; }
         public int amount { get; set; }

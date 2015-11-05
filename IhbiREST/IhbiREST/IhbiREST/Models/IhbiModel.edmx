@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="ihbiprojectDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="ihbiprojectDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Consumable">
           <Key>
             <PropertyRef Name="Id" />
@@ -22,14 +22,7 @@
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Type" Type="varchar" MaxLength="50" />
         </EntityType>
-        <EntityType Name="Exercise_Type">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Type" Type="nchar" MaxLength="10" />
-        </EntityType>
-        <EntityType Name="Table">
+        <EntityType Name="Exercise">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
@@ -40,6 +33,13 @@
           <Property Name="minutes" Type="int" />
           <Property Name="type" Type="int" />
           <Property Name="date" Type="date" />
+        </EntityType>
+        <EntityType Name="Exercise_Type">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Type" Type="nchar" MaxLength="10" />
         </EntityType>
         <EntityType Name="User">
           <Key>
@@ -63,13 +63,12 @@
         <EntityContainer Name="ihbiprojectDBModelStoreContainer">
           <EntitySet Name="Consumable" EntityType="Self.Consumable" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Conusmable_Type" EntityType="Self.Conusmable_Type" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Exercise" EntityType="Self.Exercise" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Exercise_Type" EntityType="Self.Exercise_Type" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Table" EntityType="Self.Table" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Welness" EntityType="Self.Welness" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="ihbiprojectDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -97,18 +96,6 @@
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Type" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
         </EntityType>
-        <EntityType Name="Exercise">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" />
-          <Property Name="user_id" Type="Int32" />
-          <Property Name="stretching" Type="Int32" />
-          <Property Name="pelvic" Type="Int32" />
-          <Property Name="minutes" Type="Int32" />
-          <Property Name="type" Type="Int32" />
-          <Property Name="date" Type="DateTime" Precision="0" />
-        </EntityType>
         <EntityType Name="User">
           <Key>
             <PropertyRef Name="Id" />
@@ -132,10 +119,22 @@
           <EntitySet Name="Consumables" EntityType="Self.Consumable" />
           <EntitySet Name="Conusmable_Type" EntityType="Self.Conusmable_Type" />
           <EntitySet Name="Exercise_Type" EntityType="Self.Exercise_Type" />
-          <EntitySet Name="Exercises" EntityType="ihbiprojectDBModel.Exercise" />
           <EntitySet Name="Users" EntityType="Self.User" />
           <EntitySet Name="Welnesses" EntityType="Self.Welness" />
+          <EntitySet Name="Exercises" EntityType="ihbiprojectDBModel.Exercise" />
         </EntityContainer>
+        <EntityType Name="Exercise">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="user_id" Type="Int32" />
+          <Property Name="stretching" Type="Int32" />
+          <Property Name="pelvic" Type="Int32" />
+          <Property Name="minutes" Type="Int32" />
+          <Property Name="type" Type="Int32" />
+          <Property Name="date" Type="DateTime" Precision="0" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -169,19 +168,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Exercises">
-            <EntityTypeMapping TypeName="ihbiprojectDBModel.Exercise">
-              <MappingFragment StoreEntitySet="Table">
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="user_id" ColumnName="user_id" />
-                <ScalarProperty Name="stretching" ColumnName="stretching" />
-                <ScalarProperty Name="pelvic" ColumnName="pelvic" />
-                <ScalarProperty Name="minutes" ColumnName="minutes" />
-                <ScalarProperty Name="type" ColumnName="type" />
-                <ScalarProperty Name="date" ColumnName="date" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="Users">
             <EntityTypeMapping TypeName="ihbiprojectDBModel.User">
               <MappingFragment StoreEntitySet="User">
@@ -200,6 +186,19 @@
                 <ScalarProperty Name="sleep" ColumnName="sleep" />
                 <ScalarProperty Name="mood" ColumnName="mood" />
                 <ScalarProperty Name="date" ColumnName="date" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Exercises">
+            <EntityTypeMapping TypeName="ihbiprojectDBModel.Exercise">
+              <MappingFragment StoreEntitySet="Exercise">
+                <ScalarProperty Name="date" ColumnName="date" />
+                <ScalarProperty Name="type" ColumnName="type" />
+                <ScalarProperty Name="minutes" ColumnName="minutes" />
+                <ScalarProperty Name="pelvic" ColumnName="pelvic" />
+                <ScalarProperty Name="stretching" ColumnName="stretching" />
+                <ScalarProperty Name="user_id" ColumnName="user_id" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

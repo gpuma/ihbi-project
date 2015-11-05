@@ -28,8 +28,8 @@ namespace IhbiREST.Models
         public virtual DbSet<Consumable> Consumables { get; set; }
         public virtual DbSet<Conusmable_Type> Conusmable_Type { get; set; }
         public virtual DbSet<Exercise_Type> Exercise_Type { get; set; }
-        public virtual DbSet<Exercise> Exercises { get; set; }
         public virtual DbSet<User> Users { get; set; }
         public virtual DbSet<Welness> Welnesses { get; set; }
+        public virtual DbSet<Exercise> Exercises { get; set; }
     }
 }
