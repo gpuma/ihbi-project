@@ -1,15 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Diagnostics;
 using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms.Maps;
+using Xamarin.Forms;
 using ihbiproject.Models;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 
 namespace ihbiproject.Data
 {
     public static class db
     {
+        static string eventsCache;
         //static constructors are executed the first time a static class field is accessed
         static db()
         {
@@ -71,6 +76,31 @@ namespace ihbiproject.Data
         public static List<NewsFeedItem> GetNewsFeed()
         {
             return newsfeeditems;
+        }
+
+        //gets the events of the facebook group by querying the Graph API
+        public static MapEvent[] GetFbEvents()
+        {
+            Debug.WriteLine("trying to get events feed");
+            var eventsFeed = DependencyService.Get<IFaceBookFeed>().getFeed(eventsOnly: true);
+            Debug.WriteLine(eventsFeed != "plz login");
+
+            //if there are no changes
+            if (eventsCache == eventsFeed)
+                return null;
+            eventsCache = eventsFeed;
+            //we parse our object
+            var eventsRoot = JObject.Parse(eventsFeed)["data"];
+            var mapEvents = eventsRoot.Select(
+                e => new MapEvent()
+                {
+                    Name = e["name"].ToString(),
+                    Latitude = Double.Parse(e["place"]["location"]["latitude"].ToString()),
+                    Longitude = Double.Parse(e["place"]["location"]["longitude"].ToString()),
+                    FbId = e["id"].ToString(),
+                    StartTime = DateTime.Parse(e["start_time"].ToString())
+                }).ToArray();
+            return mapEvents.ToArray();
         }
     }
 }

@@ -2,6 +2,6 @@
 {
     public interface IFBLink
     {
-        void OpenFBUri(string URI);
+        void OpenFBUri(string fbURI, string webURI);
     }
 }
