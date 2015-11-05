@@ -10,8 +10,9 @@ namespace ihbiproject.Views
 	{
 		public ExerciseView ()
 		{
-			System.Diagnostics.Debug.WriteLine ("====> in EV");
 			InitializeComponent ();
+			ExerciseViewModel EVM = (ExerciseViewModel)exercisetable.BindingContext;
+			EVM.loadExercise ();
 		}
 
 		protected override void OnDisappearing ()

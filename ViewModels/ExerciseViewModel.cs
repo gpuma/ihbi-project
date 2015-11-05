@@ -40,6 +40,57 @@ namespace ihbiproject.ViewModels
 			set { SetProperty (ref pelvic, value); }
 		}
 
+
+		public async void loadExercise() {
+			Exercise exercise = new Exercise ();
+			DateTime date = DateTime.Now;
+
+			try {
+				string sDate = ""+date.Date.ToString("yyyy")+"-"+date.Date.ToString("MM")+"-"+date.Date.ToString("dd");
+				System.Diagnostics.Debug.WriteLine("sDate: "+sDate);
+				HttpWebRequest request = (HttpWebRequest)HttpWebRequest.Create (new Uri ("http://ihbiproject.azurewebsites.net/api/Exercises/1/"+sDate));
+				request.ContentType = "application/json";
+				request.Method = "GET";
+			
+
+				using (HttpWebResponse response = (HttpWebResponse) await request.GetResponseAsync())
+				{
+					if (response.StatusCode != HttpStatusCode.OK) {
+						System.Diagnostics.Debug.WriteLine ("Error fetching data. Server returned status code: {0}", response.StatusDescription);
+					} else {
+						using (Stream stream = response.GetResponseStream ()) {
+
+							using (StreamReader reader = new StreamReader (stream)) {
+								//String result = reader.ReadToEnd ();
+								JsonSerializer serializer = new JsonSerializer ();
+								Exercise result = (Exercise)serializer.Deserialize (reader, typeof(Exercise));
+//								System.Diagnostics.Debug.WriteLine ("===> Users: " + result.ToString ());
+								exercise = result;
+							}
+
+						}
+					}
+				}
+
+				ExerciseType = exercise.type;
+				ExerciseMin = exercise.minutes;
+				if (exercise.pelvic == 1){
+					Pelvic = true;
+				} else {
+					Pelvic = false;
+				}
+				if (exercise.stretching == 1) {
+					Stretching = true;
+				}else {
+					Stretching = false;
+				}
+				System.Diagnostics.Debug.WriteLine ("after setting");
+			} catch (System.Net.WebException we) {
+				System.Diagnostics.Debug.WriteLine ("Exception in Load Exercise: " + we);
+			}
+
+		}
+
 		public async void saveExercise() 
 		{
 			Exercise exercise = new Exercise ();
@@ -55,8 +106,11 @@ namespace ihbiproject.ViewModels
 			} else {
 				exercise.stretching = 0;
 			}
-			exercise.type = "1";
-			exercise.date = DateTime.Now;
+			exercise.type = ExerciseType;
+			DateTime date = DateTime.Now;
+			string sDate = ""+date.Date.ToString("yyyy")+"-"+date.Date.ToString("MM")+"-"+date.Date.ToString("dd");
+			System.Diagnostics.Debug.WriteLine("sDate: "+sDate);
+			exercise.date = sDate;
 			exercise.user_id = 1;
 
 
