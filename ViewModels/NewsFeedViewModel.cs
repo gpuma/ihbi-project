@@ -24,7 +24,7 @@ namespace ihbiproject.ViewModels
 			String feed = DependencyService.Get<IFaceBookFeed> ().getFeed ();
 			feedLoaded (feed);
 			LoginViewModel LVM = new LoginViewModel ();
-			LVM.createUser ();
+			//LVM.createUser ();
         }
 
 		public void RefreshFeed() {
