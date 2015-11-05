@@ -6,7 +6,7 @@
 
 
 
-	<TableView Intent="Form">
+	<TableView x:Name="exercisetable" Intent="Form">
 		<TableView.BindingContext>
 			<vms:ViewModels.ExerciseViewModel />
 		</TableView.BindingContext>

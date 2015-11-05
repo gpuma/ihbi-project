@@ -125,7 +125,7 @@ namespace IhbiREST.Controllers
             base.Dispose(disposing);
         }
 
-        private bool ExerciseExists(int id)
+        private bool ExerciseExists(int? id)
         {
             return db.Exercises.Count(e => e.Id == id) > 0;
         }

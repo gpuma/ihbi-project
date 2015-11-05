@@ -17,8 +17,8 @@ namespace ihbiproject.Views
 		protected override void OnDisappearing ()
 		{
 			base.OnDisappearing ();
-//			FoodViewModel FVM = (FoodViewModel) foodtable.BindingContext;
-//			FVM.saveFood ();
+			ExerciseViewModel EVM = (ExerciseViewModel) exercisetable.BindingContext;
+			EVM.saveExercise ();
 
 		}
 	}

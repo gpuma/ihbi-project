@@ -4,12 +4,13 @@ namespace ihbiproject
 {
 	public class Exercise
 	{
-		public int user_id { get; set; }
-		public bool stretching { get; set; }
-		public bool pelvic { get; set; }
-		public int minutes { get; set; }
+		public int? Id { get; set; }
+		public Nullable<int> user_id { get; set; }
+		public Nullable<int> stretching { get; set; }
+		public Nullable<int> pelvic { get; set; }
+		public string minutes { get; set; }
 		public string type { get; set; }
-		public DateTime date { get; set; }
+		public Nullable<System.DateTime> date { get; set; }
 
 		public Exercise ()
 		{
