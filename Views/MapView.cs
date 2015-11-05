@@ -8,6 +8,7 @@ using Xamarin.Forms;
 using Xamarin.Forms.Maps;
 using ihbiproject.Data;
 using ihbiproject.Models;
+using Humanizer;
 
 namespace ihbiproject.Views
 {
@@ -88,7 +89,7 @@ namespace ihbiproject.Views
                 {
                     Type = PinType.Place,
                     Position = new Position(e.Latitude, e.Longitude),
-                    Label = String.Format("{0} ({1})", e.Name, e.StartTime.ToString())
+                    Label = String.Format("{0} ({1})", e.Name, e.StartTime.Humanize())
                 };
                 pin.Clicked += MapPin_Clicked;
                 map.Pins.Add(pin);

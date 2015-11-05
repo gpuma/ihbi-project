@@ -10,6 +10,7 @@ using ihbiproject.Data;
 using Xamarin.Forms;
 using Newtonsoft.Json.Linq;
 using Newtonsoft.Json;
+using Humanizer;
 
 
 namespace ihbiproject.ViewModels
@@ -67,7 +68,7 @@ namespace ihbiproject.ViewModels
 				NewsFeedItem newitem = new NewsFeedItem ();
 				JObject obj = (JObject) obj2;
 				newitem.From = obj["from"]["name"].ToString();
-				newitem.Created_time = obj["created_time"].ToString();
+				newitem.Created_time = DateTime.Parse(obj["created_time"].ToString()).Humanize();
 				JToken msg;
 				if (obj.TryGetValue ("message", out msg)) {
 					newitem.Message = obj ["message"].ToString ();
