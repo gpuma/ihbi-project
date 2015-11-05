@@ -35,6 +35,27 @@ namespace IhbiREST.Controllers
             return Ok(consumable);
         }
 
+        //GET api/Consumables/5/2011-12-30
+        [Route("api/Consumables/{user_id}/{date}")]
+        [HttpGet]
+        public IHttpActionResult GetLastConsumable(String user_id, String date)
+        {
+
+            var dateT = DateTime.Parse(date);
+            var id = int.Parse(user_id);
+            var consumable = (from c in db.Consumables
+                            where (c.user_id == id) && (c.date == dateT)
+                            orderby c.Id descending
+                            select c).FirstOrDefault();
+            if (consumable == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(consumable);
+
+        }
+
         // PUT: api/Consumables/5
         [ResponseType(typeof(void))]
         public IHttpActionResult PutConsumable(int id, Consumable consumable)
