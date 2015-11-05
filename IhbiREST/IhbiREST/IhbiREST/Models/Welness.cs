@@ -14,7 +14,7 @@ namespace IhbiREST.Models
     
     public partial class Welness
     {
-        public int? Id { get; set; }
+        public int Id { get; set; }
         public int user_id { get; set; }
         public int sleep { get; set; }
         public int mood { get; set; }

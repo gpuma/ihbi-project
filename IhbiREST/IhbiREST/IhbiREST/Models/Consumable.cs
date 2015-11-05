@@ -14,10 +14,12 @@ namespace IhbiREST.Models
     
     public partial class Consumable
     {
-        public int? Id { get; set; }
+        public int Id { get; set; }
         public int user_id { get; set; }
-        public int type { get; set; }
-        public int amount { get; set; }
         public System.DateTime date { get; set; }
+        public int fruit { get; set; }
+        public int calcium { get; set; }
+        public int vegetable { get; set; }
+        public int water { get; set; }
     }
 }
