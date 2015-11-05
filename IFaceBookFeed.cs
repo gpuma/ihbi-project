@@ -4,7 +4,7 @@ namespace ihbiproject
 {
 	public interface IFaceBookFeed
 	{
-		string getFeed(NewsFeedViewModel vm);
+		string getFeed(bool eventsOnly = false);
 	}
 }
 

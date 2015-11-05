@@ -44,6 +44,9 @@ namespace ihbiproject.Views
 
             stack.Children.Add(map);
             Content = stack;
+
+            //if(App.Instance.IsAuthenticated)
+            //    db.GetFbEvents();
         }
 
         private void BtnLocation_Clicked(object sender, EventArgs e)
@@ -62,6 +65,11 @@ namespace ihbiproject.Views
         {
             //for some reason displaying twice
             await DisplayAlert("", (sender as Pin).Label, "Ok");
+        }
+
+        protected override void OnAppearing()
+        {
+            DisplayAlert("", "OnAppearing called", "ok");
         }
     }
 }

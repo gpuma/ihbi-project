@@ -21,7 +21,7 @@ namespace ihbiproject.ViewModels
         public void LoadNewsFeed()
         {
 			NewsFeedItems = new ObservableCollection<NewsFeedItem>();
-			String feed = DependencyService.Get<IFaceBookFeed> ().getFeed (this);
+			String feed = DependencyService.Get<IFaceBookFeed> ().getFeed ();
 			feedLoaded (feed);
 			LoginViewModel LVM = new LoginViewModel ();
 			LVM.createUser ();
@@ -29,7 +29,7 @@ namespace ihbiproject.ViewModels
 
 		public void RefreshFeed() {
 			NewsFeedItems.Clear ();
-			String feed = DependencyService.Get<IFaceBookFeed> ().getFeed (this);
+			String feed = DependencyService.Get<IFaceBookFeed> ().getFeed ();
 			feedLoaded (feed);
 		}
 

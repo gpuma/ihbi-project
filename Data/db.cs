@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Diagnostics;
 using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms.Maps;
+using Xamarin.Forms;
 using ihbiproject.Models;
 
 namespace ihbiproject.Data
@@ -71,6 +73,13 @@ namespace ihbiproject.Data
         public static List<NewsFeedItem> GetNewsFeed()
         {
             return newsfeeditems;
+        }
+
+        public static void GetFbEvents()
+        {
+            Debug.WriteLine("trying to get events feed");
+            var eventsFeed = DependencyService.Get<IFaceBookFeed>().getFeed(eventsOnly: true);
+            Debug.WriteLine(eventsFeed != "plz login");
         }
     }
 }
