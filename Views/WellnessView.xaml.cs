@@ -92,7 +92,6 @@ namespace ihbiproject.Views
                     cell.Opacity = CONST.DEFAULT_OPACITY;
                     continue;
                 }
-                //fuck you xamarin
                 var filename = (cell.Source as FileImageSource).File;
                 //todo: property change in viewmodel should trigger change in view. it doesn't.
                 vm.SelectedMood = vm.moods[filename];
