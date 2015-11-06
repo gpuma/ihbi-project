@@ -41,10 +41,9 @@ namespace ihbiproject.Views
 		}
 
 		void onDateSelected(Object sender, EventArgs e) {
-			System.Diagnostics.Debug.WriteLine ("DATE SELECTED!!!!!");
+			
 			DatePicker dp = (DatePicker)sender;
-
-
+			System.Diagnostics.Debug.WriteLine ("DATE SELECTED!!!!!"+dp.Date.ToString("dd")+ " date?");
 			App.Instance.date = dp.Date;
 
 		}

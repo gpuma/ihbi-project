@@ -19,7 +19,7 @@ namespace ihbiproject.Views
 		{
 			base.OnDisappearing ();
 			ExerciseViewModel EVM = (ExerciseViewModel) exercisetable.BindingContext;
-			EVM.saveExercise ();
+			EVM.saveExercise (App.Instance.date);
 
 		}
 

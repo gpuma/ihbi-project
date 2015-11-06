@@ -115,6 +115,10 @@ namespace ihbiproject.ViewModels
 				}
 			} catch (System.Net.WebException we) {
 				System.Diagnostics.Debug.WriteLine ("Exception in Load Exercise: " + we);
+				calcium = 0;
+				fruit = 0;
+				vegetable = 0;
+				water = 0;
 			}
 		}
 
@@ -128,9 +132,9 @@ namespace ihbiproject.ViewModels
 			foodInfo.vegetable = vegetable;
 			foodInfo.water = water;
 			foodInfo.user_id = 1;
-			DateTime date = DateTime.Now;
+			DateTime date = App.Instance.date;
 			string sDate = ""+date.Date.ToString("yyyy")+"-"+date.Date.ToString("MM")+"-"+date.Date.ToString("dd");
-			//System.Diagnostics.Debug.WriteLine("sDate: "+sDate);
+			System.Diagnostics.Debug.WriteLine("save food date : "+sDate);
 			foodInfo.date = sDate;
 
 			HttpWebRequest request = (HttpWebRequest)HttpWebRequest.Create (new Uri ("http://ihbiproject.azurewebsites.net/api/Consumables"));

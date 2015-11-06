@@ -136,11 +136,15 @@ namespace ihbiproject.ViewModels
 				System.Diagnostics.Debug.WriteLine ("after setting");
 			} catch (System.Net.WebException we) {
 				System.Diagnostics.Debug.WriteLine ("Exception in Load Exercise: " + we);
+				ExerciseType = null;
+				ExerciseMin = null;
+				Pelvic = false;
+				Stretching = false;
 			}
 
 		}
 
-		public async void saveExercise() 
+		public async void saveExercise(DateTime date) 
 		{
 			Exercise exercise = new Exercise ();
 
@@ -156,9 +160,9 @@ namespace ihbiproject.ViewModels
 				exercise.stretching = 0;
 			}
 			exercise.type = ExerciseType;
-			DateTime date = DateTime.Now;
+			//DateTime date = App.Instance.date;
 			string sDate = ""+date.Date.ToString("yyyy")+"-"+date.Date.ToString("MM")+"-"+date.Date.ToString("dd");
-			System.Diagnostics.Debug.WriteLine("sDate: "+sDate);
+			System.Diagnostics.Debug.WriteLine("Exercise Store Date : "+sDate);
 			exercise.date = sDate;
 			exercise.user_id = 1;
 
