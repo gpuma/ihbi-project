@@ -22,6 +22,26 @@ namespace ihbiproject.Views
             AddMoodOptions();
         }
 
+        public void SelectMood(string mood)
+        {
+            var mood_filename = vm.moods.FirstOrDefault(m => m.Value == mood).Key;
+            if (mood_filename == null)
+                throw new Exception("specified mood doesn't exist");
+            vm.SelectedMood = mood;
+            lblMood.Text = vm.SelectedMood;
+            //var moodCell = 
+
+            //we make everything opaque
+            foreach (Image cell in grdMoods.Children)
+            {
+                var filename = (cell.Source as FileImageSource).File;
+                if(filename == mood_filename)
+                    cell.Opacity = 1;
+                else
+                    cell.Opacity = CONST.DEFAULT_OPACITY;
+            }
+        }
+
         void OnSldSleepValueChanged(object sender, ValueChangedEventArgs e)
         {
             var newStep = Math.Round(e.NewValue);
