@@ -14,8 +14,8 @@
 		    	<TableSection>
 		      			<EntryCell Label ="Type of exercise" Text="{Binding ExerciseType}" Keyboard = "Text" />
 		    			<EntryCell Label="Minutes Exercised" Text="{Binding ExerciseMin}" Keyboard = "Numeric"/>
-		      			<SwitchCell Text="Stretching"  IsEnabled = "{Binding Stretching}"/>
-		      			<SwitchCell Text="Pelvic floor exercise" IsEnabled = "{Binding Pelvic}" />
+		      			<SwitchCell Text="Stretching" On = "{Binding Stretching}"/>
+		      			<SwitchCell Text="Pelvic floor exercise" On = "{Binding Pelvic}" />
 		      	</TableSection>
 		    </TableRoot>
 		</TableView>
