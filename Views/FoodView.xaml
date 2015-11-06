@@ -16,22 +16,26 @@
 			<EntryCell Label="Calcium" 
 		  		 Text="{Binding calcium}" 
 		   		 Placeholder = "Number of serves" 
-		   		 Keyboard = "Numeric" /> 
+		   		 Keyboard = "Numeric"
+           XAlign = "Center"/> 
 
 			<EntryCell Label = "Fruit" 
 		  		 Text = "{Binding fruit}" 
 		   		 Placeholder = "Number of pieces" 
-		   		 Keyboard = "Numeric" /> 
+		   		 Keyboard = "Numeric"
+           XAlign = "Center" /> 
 
 		   	<EntryCell Label = "Vegetable" 
 		  		 Text = "{Binding vegetable}" 
-		   		 Placeholder = "Number of serves" 
-		   		 Keyboard = "Numeric" /> 
+		   		 Placeholder = "Number of serves"
+           Keyboard = "Numeric"
+           XAlign = "Center"/> 
 
 		   	<EntryCell Label = "Water" 
 		 		 Text = "{Binding water}" 
-		  		 Placeholder = "Number of glasses" 
-		  		 Keyboard = "Numeric" /> 	
+		  		 Placeholder = "Number of glasses"
+           Keyboard = "Numeric"
+           XAlign = "Center"/> 	
 
 		</TableSection> 
 	</TableRoot> 
