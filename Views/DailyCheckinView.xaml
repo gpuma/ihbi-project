@@ -16,7 +16,7 @@
    <StackLayout Orientation = "Vertical" Padding = "20, 10, 0, 0">
    <StackLayout Orientation = "Horizontal">
       <Label Text = "Date : "/>
-      <DatePicker VerticalOptions="StartAndExpand" Date="{Binding exerciseDate}">
+      <DatePicker VerticalOptions="StartAndExpand" Date="{Binding exerciseDate}" DateSelected="onDateSelected">
          <DatePicker.Format>yyyy-MM-dd</DatePicker.Format>
          <DatePicker.MinimumDate>
             <sys:DateTime x:FactoryMethod="Parse">

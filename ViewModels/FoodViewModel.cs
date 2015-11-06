@@ -82,6 +82,42 @@ namespace ihbiproject.ViewModels
 			}
 		}
 
+		public async void loadFood(DateTime date) {
+			Food food = new Food();
+
+			try {
+				string sDate = ""+date.Date.ToString("yyyy")+"-"+date.Date.ToString("MM")+"-"+date.Date.ToString("dd");
+				System.Diagnostics.Debug.WriteLine("sDate: "+sDate);
+				HttpWebRequest request = (HttpWebRequest)HttpWebRequest.Create (new Uri ("http://ihbiproject.azurewebsites.net/api/Consumables/1/"+sDate));
+				request.ContentType = "application/json";
+				request.Method = "GET";
+				using (HttpWebResponse response = (HttpWebResponse) await request.GetResponseAsync())
+				{
+					if (response.StatusCode != HttpStatusCode.OK) {
+						System.Diagnostics.Debug.WriteLine ("Error fetching data. Server returned status code: {0}", response.StatusDescription);
+					} else {
+						using (Stream stream = response.GetResponseStream ()) {
+
+							using (StreamReader reader = new StreamReader (stream)) {
+								//String result = reader.ReadToEnd ();
+								JsonSerializer serializer = new JsonSerializer ();
+								Food result = (Food)serializer.Deserialize (reader, typeof(Food));
+								System.Diagnostics.Debug.WriteLine ("===> Consumables from Load: " + result.ToString ());
+								food = result;
+								calcium = food.calcium;
+								fruit = food.fruit;
+								vegetable = food.vegetable;
+								water = food.water;
+							}
+
+						}
+					}
+				}
+			} catch (System.Net.WebException we) {
+				System.Diagnostics.Debug.WriteLine ("Exception in Load Exercise: " + we);
+			}
+		}
+
 
 		public async void saveFood() 
 		{

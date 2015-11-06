@@ -40,6 +40,15 @@ namespace ihbiproject.Views
 				Navigation.PushAsync(selected.content);
 		}
 
+		void onDateSelected(Object sender, EventArgs e) {
+			System.Diagnostics.Debug.WriteLine ("DATE SELECTED!!!!!");
+			DatePicker dp = (DatePicker)sender;
+
+
+			App.Instance.date = dp.Date;
+
+		}
+
 
 
 	}

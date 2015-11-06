@@ -23,6 +23,13 @@ namespace ihbiproject.Views
 			FVM.saveFood ();
 
 		}
+
+		protected override void OnAppearing ()
+		{
+			base.OnAppearing ();
+			FoodViewModel FVM = (FoodViewModel) foodtable.BindingContext;
+			FVM.loadFood (App.Instance.date);
+		}
 	}
 }
 
