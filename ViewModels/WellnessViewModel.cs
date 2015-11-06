@@ -28,6 +28,8 @@ namespace ihbiproject.ViewModels
 			well.user_id = 1;
 			well.sleep = SleepHours;
 			well.mood = SelectedMood;
+            if (well.mood == null)
+                well.mood = "";
 			well.date = DateTime.Now;
 
 
