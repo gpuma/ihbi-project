@@ -9,6 +9,8 @@ namespace ihbiproject
 {
 	public class App : Application
 	{
+
+		public DateTime date = DateTime.Now;
 		//public App ()
 		//{
 		//entry point needs to be wrapped in a NavigationPage so we can push pages on top of it (basic navigation)

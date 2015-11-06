@@ -22,6 +22,14 @@ namespace ihbiproject.Views
 			EVM.saveExercise ();
 
 		}
+
+		protected override void OnAppearing ()
+		{
+
+			ExerciseViewModel EVM = (ExerciseViewModel) exercisetable.BindingContext;
+
+			EVM.loadExercise (App.Instance.date);
+		}
 	}
 }
 
