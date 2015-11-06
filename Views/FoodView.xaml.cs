@@ -12,6 +12,7 @@ namespace ihbiproject.Views
 		public FoodView ()
 		{
 			InitializeComponent ();
+            Title = "Food";
 			FoodViewModel FVM = (FoodViewModel) foodtable.BindingContext;
 			FVM.loadFood ();
 		}

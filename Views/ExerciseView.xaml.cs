@@ -11,6 +11,7 @@ namespace ihbiproject.Views
 		public ExerciseView ()
 		{
 			InitializeComponent ();
+            Title = "Exercise";
 			ExerciseViewModel EVM = (ExerciseViewModel)exercisetable.BindingContext;
 			EVM.loadExercise ();
 		}
