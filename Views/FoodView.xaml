@@ -13,29 +13,33 @@
 		<TableSection> 
 		<!--how to show placeholders instead of "0" when a page load-->
 
-			<EntryCell Label="Calcium" 
-		  		 Text="{Binding calcium}" 
+			<EntryCell x:Name = "cellCalcium"
+				 Label="Calcium(Serves): " 
 		   		 Placeholder = "Number of serves" 
+		   		 Text="{Binding calcium}" 
 		   		 Keyboard = "Numeric"
-           XAlign = "Center"/> 
+         	     XAlign = "Center"/> 
 
-			<EntryCell Label = "Fruit" 
+			<EntryCell x:Name = "cellFruit"
+				 Label = "Fruit(Pieces): " 
 		  		 Text = "{Binding fruit}" 
 		   		 Placeholder = "Number of pieces" 
 		   		 Keyboard = "Numeric"
-           XAlign = "Center" /> 
+         	     XAlign = "Center" /> 
 
-		   	<EntryCell Label = "Vegetable" 
+		   	<EntryCell x:Name = "cellVege"
+		   		 Label = "Vegetable(Serves): " 
 		  		 Text = "{Binding vegetable}" 
 		   		 Placeholder = "Number of serves"
-           Keyboard = "Numeric"
-           XAlign = "Center"/> 
+      		     Keyboard = "Numeric"
+      		     XAlign = "Center"/> 
 
-		   	<EntryCell Label = "Water" 
+		   	<EntryCell x:Name = "cellWater"
+		   		 Label = "Water(Glasses): " 
 		 		 Text = "{Binding water}" 
 		  		 Placeholder = "Number of glasses"
-           Keyboard = "Numeric"
-           XAlign = "Center"/> 	
+        		 Keyboard = "Numeric"
+       		     XAlign = "Center"/> 	
 
 		</TableSection> 
 	</TableRoot> 

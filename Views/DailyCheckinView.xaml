@@ -44,8 +44,9 @@
 			<DataTemplate>
 				<ViewCell>
 					<ViewCell.View>
-						<StackLayout Padding = "20, 10, 0, 0">
-							<Label Text = "{Binding Name}"  />
+						<StackLayout Padding = "20, 10, 20, 0" Orientation = "Horizontal">
+							<Label Text = "{Binding Name}"  HorizontalOptions = "StartAndExpand"/>
+							<Image Source = "forward_icon.png" HorizontalOptions = "End"/>
 						</StackLayout>
 					</ViewCell.View>
 				</ViewCell>

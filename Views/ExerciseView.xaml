@@ -12,10 +12,22 @@
 		</TableView.BindingContext>
 		    <TableRoot>
 		    	<TableSection>
-		      			<EntryCell Label ="Type of exercise" Text="{Binding ExerciseType}" Keyboard = "Text" XAlign = "Center"/>
-		    			<EntryCell Label="Minutes Exercised" Text="{Binding ExerciseMin}" Keyboard = "Numeric" XAlign = "Center"/>
-		      			<SwitchCell Text="Stretching" On = "{Binding Stretching}"/>
-		      			<SwitchCell Text="Pelvic floor exercise" On = "{Binding Pelvic}" />
+		      			<EntryCell x:Name = "cellExercise" 
+		      				Label ="Type of exercise: " 
+		      				Text="{Binding ExerciseType}" 
+		      				Keyboard = "Text" 
+		      				XAlign = "Center"/>
+		    			<EntryCell x:Name = "cellMinutes"
+		    				Label="Minutes Exercised: " 
+		    				Text="{Binding ExerciseMin}" 
+		    				Keyboard = "Numeric" 
+		    				XAlign = "Center"/>
+		      			<SwitchCell x:Name = "cellStretching"
+		      				Text="Stretching" 
+		      				On = "{Binding Stretching}"/>
+		      			<SwitchCell x:Name = "cellPelvic"
+		      				Text="Pelvic floor exercise" 
+		      				On = "{Binding Pelvic}" />
 		      	</TableSection>
 		    </TableRoot>
 		</TableView>

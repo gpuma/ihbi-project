@@ -170,6 +170,7 @@
     <AndroidResource Include="Resources\drawable-xhdpi\YWWP96.png" />
     <AndroidResource Include="Resources\drawable-xhdpi\splash.png" />
     <AndroidResource Include="Resources\drawable\map_icon.png" />
+    <AndroidResource Include="Resources\drawable\forward_icon.png" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\mood_01.png" />

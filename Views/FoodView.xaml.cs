@@ -22,7 +22,6 @@ namespace ihbiproject.Views
 			base.OnDisappearing ();
 			FoodViewModel FVM = (FoodViewModel) foodtable.BindingContext;
 			FVM.saveFood ();
-
 		}
 
 		protected override void OnAppearing ()
